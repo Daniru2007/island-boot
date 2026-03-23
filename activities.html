@@ -1,104 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Activities | Cinnamon Island</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Activities | Cinnamon Island</title>
 
-    <!-- Bootstrap (ONLY ONE VERSION) -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
 
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f8f9fa;
+  <style>
+    body {
+         font-family: 'DM Sans', sans-serif; 
         }
+    h1, h2, h3, h4
+     { 
+        font-family: 'Playfair Display', serif; 
+    }
+    .hero-section {
+      background: linear-gradient(rgba(0,0,0,0.52), rgba(0,0,0,0.52)),
+        url('/assests/michael-DXQB5D1njMY-unsplash.jpg') center/cover no-repeat ;
+      min-height: 480px;
+    }
+    .activity-card { transition: transform .22s, box-shadow .22s; cursor: pointer; }
+    .activity-card:hover { transform: translateY(-6px); box-shadow: 0 12px 32px rgba(0,0,0,.13) !important; }
 
-        /* Hero Title */
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-                        url('/assests/michael-DXQB5D1njMY-unsplash.jpg') center/cover no-repeat;
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-        }
-
-        .hero h1 {
-            font-size: 68px;
-            font-weight: 700;
-        }
-
-
-
-       
-        .carousel img {
-            height: 450px;
-            object-fit: cover;
-            border-radius: 12px;
-        }
-
-        .carousel-container {
-            margin-top: 40px;
-        }
-
-        
-        .section {
-            padding: 60px 20px;
-        }
-    </style>
+    @media screen and (max-width: 768px) {
+      h1{
+        font-size: 50px !important;
+      }
+      
+    }
+  </style>
 </head>
+<body class="bg-light">
 
-<body>
+  <!-- BREADCRUMB  -->
+  <div class="bg-white border-bottom px-3 py-2">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb mb-0 small">
+        <li class="breadcrumb-item"><a href="#" class="text-decoration-none text-success">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Activities</li>
+      </ol>
+    </nav>
+  </div>
 
-    <!-- HERO SECTION -->
-    <section class="hero" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
-        <h1>Cinnamon Island</h1>
-        <span>Discover the Magic of Cinnamon Island</span>
-    </section>
+  <!--  HERO  -->
+  <section class="hero-section d-flex flex-column align-items-center justify-content-center text-white text-center px-3">
+    <span class="badge bg-success bg-opacity-75 text-uppercase mb-3 px-3 py-2 rounded-pill">
+      <i class="bi bi-geo-alt-fill me-1"></i>Sri Lanka
+    </span>
+    <h1 class="display-3 fw-bold mb-2 " style="font-size: 105px;">Cinnamon Island</h1>
+    <p class="lead fw-normal opacity-75 mb-4">Where nature, culture &amp; adventure meet</p>
+    <a href="#activities" class="btn btn-success btn-lg rounded-pill px-4 shadow">
+      Explore Activities <i class="bi bi-arrow-down ms-2"></i>
+    </a>
+  </section>
 
-    <!-- CONTENT -->
-    <main class="container section">
+  <!--  MAIN  -->
+  <main class="container py-5">
 
-        <h3 class="text-center mb-4 text-secondary" style="font-size: 30px;">Explore Activities</h3>
-        <span style="color: gray; font-size: medium; text-align: center; "> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores itaque aperiam quia accusamus sequi! Iusto doloremque laudantium voluptates, libero minus debitis pariatur unde error sequi? Vitae, provident? Tempora, voluptatibus ut!</span>
+    <!-- Intro -->
+    <div class="text-center mb-5">
+      <h2 class="mb-3">Discover What Awaits You</h2>
+      <p class="text-muted col-lg-7 mx-auto">
+        From tranquil lagoon safaris to authentic home-cooked Sri Lankan feasts — every moment on
+        Cinnamon Island is crafted to leave you with memories that last a lifetime.
+      </p>
+    </div>
 
+    <!-- Carousel -->
+    <div id="heroCarousel" class="carousel slide carousel-fade rounded-4 overflow-hidden shadow mb-5" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+      </div>
+      <div class="carousel-inner" style="height:420px;">
+        <div class="carousel-item active h-100">
+          <img src="https://www.22weligambay.com/images/experiences/river-safari/river-safari-slider1.jpg"
+               class="d-block w-100 h-100 object-fit-cover" alt="Boat Safari"/>
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3 p-3">
+            <h5 class="mb-0">Lagoon Boat Safari</h5>
+          </div>
+        </div>
+        <div class="carousel-item h-100">
+          <img src="/assests/beautiful-girl-red-bikini-boat-koh-kai-island-thailand.jpg"
+               class="d-block w-100 h-100 object-fit-cover" alt="Island Hopping"/>
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3 p-3">
+            <h5 class="mb-0">Island Hopping Adventure</h5>
+          </div>
+        </div>
+        <div class="carousel-item h-100">
+          <img src="https://images.unsplash.com/photo-1748504801646-6b7832ef7178?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+               class="d-block w-100 h-100 object-fit-cover" alt="Sunset"/>
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3 p-3">
+            <h5 class="mb-0">Breathtaking Sunsets</h5>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
 
-        <div id="carouselExample" class="carousel slide carousel-container" data-bs-ride="carousel">
+    <!--  ACTIVITY CARDS  -->
+    <section id="activities" class="mb-5">
+      <div class="d-flex align-items-center justify-content-between mb-4 flex-wrap gap-2">
+        <h2 class="mb-0">Our Activities</h2>
+        <span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-3 py-2">
+          4 Experiences
+        </span>
+      </div>
 
-            <div class="carousel-inner">
+      <div class="row g-4">
 
-                <div class="carousel-item active">
-                    <img src="/assests/jakob-owens-U7DePI_oKNY-unsplash.jpg" class="d-block w-100" alt="Activity 1">
-                    
-                </div>
-
-                <div class="carousel-item">
-                    <img src="/assests/jakob-owens-2uuT1mmxnz0-unsplash.jpg" class="d-block w-100" alt="Activity 2">
-                    
-                </div>
-
-              
-
+        <div class="col-sm-6 col-lg-3">
+          <div class="card h-100 border-0 shadow-sm rounded-4 activity-card">
+            <div class="card-body text-center p-4">
+              <div class="bg-success bg-opacity-10 text-success rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width:64px;height:64px;">
+                <i class="bi bi-water fs-3"></i>
+              </div>
+              <h5 class="card-title fw-semibold">Boat Safari</h5>
+              <p class="card-text text-muted small">Glide through peaceful lagoons surrounded by exotic wildlife and mangroves.</p>
+              <span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill">Guided Tour</span>
             </div>
-
-            <!-- Controls -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </button>
-
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </button>
-
+            <div class="card-footer bg-transparent border-0 text-center pb-4">
+              <a href="#" class="btn btn-outline-success btn-sm rounded-pill px-4">Book Now</a>
+            </div>
+          </div>
         </div>
 
-    </main>
+        <div class="col-sm-6 col-lg-3">
+          <div class="card h-100 border-0 shadow-sm rounded-4 activity-card">
+            <div class="card-body text-center p-4">
+              <div class="bg-info bg-opacity-10 text-info rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width:64px;height:64px;">
+                <i class="bi bi-globe2 fs-3"></i>
+              </div>
+              <h5 class="card-title fw-semibold">Island Hopping</h5>
+              <p class="card-text text-muted small">Explore nearby islands, interact with local villages and soak in unique culture.</p>
+              <span class="badge bg-info-subtle text-info border border-info-subtle rounded-pill">Cultural</span>
+            </div>
+            <div class="card-footer bg-transparent border-0 text-center pb-4">
+              <a href="#" class="btn btn-outline-info btn-sm rounded-pill px-4">Book Now</a>
+            </div>
+          </div>
+        </div>
 
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <div class="col-sm-6 col-lg-3">
+          <div class="card h-100 border-0 shadow-sm rounded-4 activity-card">
+            <div class="card-body text-center p-4">
+              <div class="bg-warning bg-opacity-10 text-warning rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width:64px;height:64px;">
+                <i class="bi bi-egg-fried fs-3"></i>
+              </div>
+              <h5 class="card-title fw-semibold">Local Food</h5>
+              <p class="card-text text-muted small">Savour fresh, home-cooked Sri Lankan cuisine made with love and local spices.</p>
+              <span class="badge bg-warning-subtle text-warning border border-warning-subtle rounded-pill">Culinary</span>
+            </div>
+            <div class="card-footer bg-transparent border-0 text-center pb-4">
+              <a href="#" class="btn btn-outline-warning btn-sm rounded-pill px-4">Book Now</a>
+            </div>
+          </div>
+        </div>
 
+        <div class="col-sm-6 col-lg-3">
+          <div class="card h-100 border-0 shadow-sm rounded-4 activity-card">
+            <div class="card-body text-center p-4">
+              <div class="bg-danger bg-opacity-10 text-danger rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width:64px;height:64px;">
+                <i class="bi bi-sunset fs-3"></i>
+              </div>
+              <h5 class="card-title fw-semibold">Sunset Viewing</h5>
+              <p class="card-text text-muted small">Watch the sky turn golden as the sun dips behind the shimmering lagoon horizon.</p>
+              <span class="badge bg-danger-subtle text-danger border border-danger-subtle rounded-pill">Scenic</span>
+            </div>
+            <div class="card-footer bg-transparent border-0 text-center pb-4">
+              <a href="#" class="btn btn-outline-danger btn-sm rounded-pill px-4">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <! COMPARISON TABLE >
+    <section class="mb-5">
+      <div class="text-center mb-4">
+        <h2 class="mb-2">Why Choose Cinnamon Island?</h2>
+        <p class="text-muted">See how we stand apart from the rest</p>
+      </div>
+
+      <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+        <div class="table-responsive">
+          <table class="table table-hover align-middle mb-0">
+            <thead class="table-dark">
+              <tr>
+                <th class="py-3 ps-4" style="width:32%">Feature</th>
+                <th class="py-3 text-center text-success">
+                  <i class="bi bi-award-fill me-1"></i>Cinnamon Island
+                </th>
+                <th class="py-3 text-center text-secondary">Other Islands</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="ps-4 fw-medium"><i class="bi bi-leaf-fill text-success me-2"></i>Unique Experience</td>
+                <td class="text-center"><span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-3">Authentic cinnamon plantation tours</span></td>
+                <td class="text-center text-muted small">Mostly generic sightseeing</td>
+              </tr>
+              <tr class="table-light">
+                <td class="ps-4 fw-medium"><i class="bi bi-water text-primary me-2"></i>Boat Safari</td>
+                <td class="text-center"><span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-3">Guided lagoon tours with wildlife</span></td>
+                <td class="text-center text-muted small">Basic boat rides</td>
+              </tr>
+              <tr>
+                <td class="ps-4 fw-medium"><i class="bi bi-globe2 text-info me-2"></i>Island Hopping</td>
+                <td class="text-center"><span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-3">Includes cultural village interaction</span></td>
+                <td class="text-center text-muted small">Limited or no local engagement</td>
+              </tr>
+              <tr class="table-light">
+                <td class="ps-4 fw-medium"><i class="bi bi-egg-fried text-warning me-2"></i>Food Experience</td>
+                <td class="text-center"><span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-3">Fresh, home-cooked Sri Lankan meals</span></td>
+                <td class="text-center text-muted small">Standard restaurant food</td>
+              </tr>
+              <tr>
+                <td class="ps-4 fw-medium"><i class="bi bi-activity text-danger me-2"></i>Activities Variety</td>
+                <td class="text-center"><span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-3">Kayaking, fishing, plantation tours</span></td>
+                <td class="text-center text-muted small">Mostly limited to sightseeing</td>
+              </tr>
+              <tr class="table-light">
+                <td class="ps-4 fw-medium"><i class="bi bi-tree-fill text-success me-2"></i>Atmosphere</td>
+                <td class="text-center"><span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-3">Peaceful, nature-focused</span></td>
+                <td class="text-center text-muted small">Crowded and commercialised</td>
+              </tr>
+              <tr>
+                <td class="ps-4 fw-medium"><i class="bi bi-currency-dollar text-warning me-2"></i>Value for Money</td>
+                <td class="text-center"><span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-3">High experience value</span></td>
+                <td class="text-center text-muted small">Pay more for fewer experiences</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!--  CTA BANNER -->
+    <div class="card border-0 rounded-4 overflow-hidden bg-success text-white text-center p-5 shadow">
+      <h2 class="mb-3">Ready for Your Island Adventure?</h2>
+      <p class="lead opacity-75 mb-4">Book your experience today and discover Sri Lanka's best-kept secret.</p>
+      <div class="d-flex justify-content-center gap-3 flex-wrap">
+        <a href="#" class="btn btn-light text-success fw-semibold rounded-pill px-5">Book Now</a>
+        <a href="#" class="btn btn-outline-light rounded-pill px-5">Learn More</a>
+      </div>
+    </div>
+
+  </main>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      .forEach(el => new bootstrap.Tooltip(el));
+  </script>
 </body>
 </html>
