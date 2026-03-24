@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <title>Responsive Navbar</title>
+
+    <style>
+        .hero {
+            height: 100vh;
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        blockquote {
+            text-shadow: 0px 0px 50px black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">IslandTour</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Packages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Food</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Book</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <section class="hero d-flex align-items-center justify-content-center text-center">
+        <div class="content">
+            <h1 class="display-4 text-white fw-bold">Explore Paradise</h1>
+            <p class="lead text-white">Discover unforgettable island experiences</p>
+            <a href="#" class="btn btn-light btn-lg mt-3">View Packages</a>
+        </div>
+    </section>
+
+    <section class="bg-light text-dark text-center py-5 d-flex justify-content-center align-items-center"
+        style="height: 50vh;">
+        <div class="container">
+            <blockquote class="blockquote" style="text-shadow: none;">
+                <p class="fs-3 fst-italic mb-4">
+                    “Traveling - it leaves you speechless, then turns you into a storyteller.”
+                </p>
+                <div class="blockquote-footer">
+                    Ibn Battuta
+                </div>
+            </blockquote>
+        </div>
+    </section>
+
+    <section class="py-5">
+
+        <div class="container">
+
+            <div id="heroCarousel" class="carousel slide mx-auto rounded overflow-hidden" data-bs-ride="carousel"
+                data-bs-interval="4000" style="max-width: 1000px;">
+
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+                </div>
+
+                <div class="carousel-inner">
+
+                    <div class="carousel-item active">
+                        <img src="https://images.pexels.com/photos/457882/pexels-photo-457882.jpeg"
+                            class="d-block w-100" style="height: 500px; object-fit: cover;">
+
+                        <div
+                            class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
+                            <h1 class="fw-bold">Explore Paradise</h1>
+                            <p class="fs-5">Discover the beauty of untouched island beaches</p>
+                            <a href="#" class="btn btn-light mt-2">View Packages</a>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98" class="d-block w-100"
+                            style="height: 500px; object-fit: cover;">
+
+                        <div
+                            class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
+                            <h1 class="fw-bold">Adventure Awaits</h1>
+                            <p class="fs-5">Snorkeling, surfing, and unforgettable moments</p>
+                            <a href="#" class="btn btn-light mt-2">Explore Activities</a>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" class="d-block w-100"
+                            style="height: 500px; object-fit: cover;">
+
+                        <div
+                            class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
+                            <h1 class="fw-bold">Relax & Unwind</h1>
+                            <p class="fs-5">Experience peace like never before</p>
+                            <a href="#" class="btn btn-light mt-2">Book Now</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" style="filter: invert(1);"></span>
+                </button>
+
+                <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" style="filter: invert(1);"></span>
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="py-5 bg-light">
+
+        <div class="container">
+            <h2 class="text-center mb-5">What Our Visitors Say</h2>
+
+            <div id="reviewCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+
+                <div class="carousel-inner">
+
+                    <div class="carousel-item active">
+                        <div class="row text-center">
+
+                            <div class="col-md-4 mb-4">
+                                <img src="https://randomuser.me/api/portraits/women/1.jpg" class="rounded-circle mb-3"
+                                    width="120">
+                                <h5>Anna Deynah</h5>
+                                <p class="text-muted">Traveler</p>
+                                <p>“Amazing island experience! Everything was perfectly organized.”</p>
+                                <p class="text-warning">★★★★★</p>
+                            </div>
+
+                            <div class="col-md-4 mb-4">
+                                <img src="https://randomuser.me/api/portraits/men/2.jpg" class="rounded-circle mb-3"
+                                    width="120">
+                                <h5>John Doe</h5>
+                                <p class="text-muted">Explorer</p>
+                                <p>“The beaches were stunning and the food was unforgettable.”</p>
+                                <p class="text-warning">★★★★★</p>
+                            </div>
+
+                            <div class="col-md-4 mb-4">
+                                <img src="https://randomuser.me/api/portraits/women/3.jpg" class="rounded-circle mb-3"
+                                    width="120">
+                                <h5>Maria Kate</h5>
+                                <p class="text-muted">Photographer</p>
+                                <p>“A paradise on earth. I'll definitely come back again!”</p>
+                                <p class="text-warning">★★★★☆</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="row text-center">
+
+                            <div class="col-md-4 mb-4">
+                                <img src="https://randomuser.me/api/portraits/men/4.jpg" class="rounded-circle mb-3"
+                                    width="120">
+                                <h5>Alex Brown</h5>
+                                <p class="text-muted">Adventurer</p>
+                                <p>“Best trip ever! Loved every single moment.”</p>
+                                <p class="text-warning">★★★★★</p>
+                            </div>
+
+                            <div class="col-md-4 mb-4">
+                                <img src="https://randomuser.me/api/portraits/women/5.jpg" class="rounded-circle mb-3"
+                                    width="120">
+                                <h5>Sophia Lee</h5>
+                                <p class="text-muted">Blogger</p>
+                                <p>“The views were breathtaking and peaceful.”</p>
+                                <p class="text-warning">★★★★★</p>
+                            </div>
+
+                            <div class="col-md-4 mb-4">
+                                <img src="https://randomuser.me/api/portraits/men/6.jpg" class="rounded-circle mb-3"
+                                    width="120">
+                                <h5>David Kim</h5>
+                                <p class="text-muted">Traveler</p>
+                                <p>“Highly recommended! Great service and experience.”</p>
+                                <p class="text-warning">★★★★☆</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#reviewCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" style="filter: invert(1);"></span>
+                </button>
+
+                <button class="carousel-control-next" type="button" data-bs-target="#reviewCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" style="filter: invert(1);"></span>
+                </button>
+
+            </div>
+        </div>
+
+    </section>
+
+
+<footer class="bg-secondary text-light pt-4 pb-3 mt-5">
+    <div class="container">
+        <div class="row">
+
+            <!-- About -->
+            <div class="col-md-4 mb-3">
+                <h5>Island Explorer</h5>
+                <p class="small">
+                    Discover the best island destinations, travel tips, and guides for your next adventure.
+                </p>
+            </div>
+
+            <!-- Links -->
+            <div class="col-md-4 mb-3">
+                <h6>Quick Links</h6>
+                <ul class="list-unstyled small">
+                    <li><a href="#" class="text-light text-decoration-none">Home</a></li>
+                    <li><a href="#" class="text-light text-decoration-none">Destinations</a></li>
+                    <li><a href="#" class="text-light text-decoration-none">Gallery</a></li>
+                    <li><a href="#" class="text-light text-decoration-none">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact / Social -->
+            <div class="col-md-4 mb-3">
+                <h6>Contact</h6>
+                <p class="small mb-1">Email: info@islandexplorer.com</p>
+                <p class="small">Phone: +94 77 123 4567</p>
+
+                <div>
+                    <a href="#" class="text-light me-2">Facebook</a>
+                    <a href="#" class="text-light me-2">Instagram</a>
+                    <a href="#" class="text-light">Twitter</a>
+                </div>
+            </div>
+
+        </div>
+
+        <hr class="border-light">
+
+        <div class="text-center small">
+            © 2026 Island Explorer. All rights reserved.
+        </div>
+    </div>
+</footer>
+</body>
+
+</html>
