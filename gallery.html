@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,25 +10,25 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
-        @import url('https://fonts.googleapis.com/css2?family=Gravitas+One&family=Kulim+Park:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,700&family=Oswald:wght@200..700&family=Poiret+One&family=Space+Grotesk:wght@300..700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Gravitas+One&family=Kulim+Park:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,700&family=Oswald:wght@200..700&family=Poiret+One&family=Space+Grotesk:wght@300..700&display=swap');
 
-        body {
-            font-family: 'Kulim Park', sans-serif;
-        }
+    body {
+      font-family: 'Kulim Park', sans-serif;
+    }
 
-        h1,
-        h2,
-        h3,
-        h4 {
-            font-family: 'Poiret One', serif;
-        }
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Poiret One', serif;
+    }
 
     /* IMAGE BOX */
     .img-box {
       position: relative;
       overflow: hidden;
       border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
 
     .img-box img {
@@ -40,18 +41,19 @@
       transform: scale(1.1);
     }
 
-        .glass-navbar {
-            background: rgba(255, 255, 255, 0.353);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        }
+    .glass-navbar {
+      background: rgba(255, 255, 255, 0.353);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
     /* OVERLAY TEXT */
     .overlay {
       position: absolute;
       bottom: 0;
       width: 100%;
-      background: rgba(0,0,0,0.6);
+      background: rgba(0, 0, 0, 0.6);
       color: white;
       text-align: center;
       padding: 10px;
@@ -78,156 +80,157 @@
 
 <body>
 
-<div class="container py-5">
-      <nav class="navbar navbar-expand-lg navbar-light bg-transparent fixed-top glass-navbar">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">IslandTour</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="packages.html">Packages</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="foodanddining.html">Food</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="gallery.html">Gallery</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="activities.html">Activities</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                </ul>
-            </div>
-
+  <div class="container py-5">
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent fixed-top glass-navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">IslandTour</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="packages.html">Packages</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="foodanddining.html">Food</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="gallery.html">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="activities.html">Activities</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
         </div>
+
+      </div>
     </nav>
 
-  <h2 class="text-center mb-4" style="padding-top: 60px; padding-bottom: 50px;">Explore Our Island</h2>
+    <h1 class="text-center mb-4 fw-bold" style="padding-top: 60px; padding-bottom: 50px;">Explore Our Island</h1>
 
-  <!-- FILTER BUTTONS -->
-  <div class="text-center mb-4">
-    <button class="btn btn-dark filter-btn active" data-filter="all">All</button>
-    <button class="btn btn-outline-dark filter-btn" data-filter="beach">Beaches</button>
-    <button class="btn btn-outline-dark filter-btn" data-filter="villa">Villas</button>
-    <button class="btn btn-outline-dark filter-btn" data-filter="activity">Activities</button>
+    <!-- FILTER BUTTONS -->
+    <div class="text-center mb-4">
+      <button class="btn btn-dark filter-btn active" data-filter="all">All</button>
+      <button class="btn btn-outline-dark filter-btn" data-filter="beach">Beaches</button>
+      <button class="btn btn-outline-dark filter-btn" data-filter="villa">Villas</button>
+      <button class="btn btn-outline-dark filter-btn" data-filter="activity">Activities</button>
+    </div>
+
+    <!-- GALLERY -->
+    <div class="row">
+
+      <!-- BEACH -->
+      <div class="col-md-4 mb-4 gallery-item beach">
+        <div class="img-box">
+          <img src="c:\Users\HP\Downloads\mariola-grobelska-Z_LkTUshc6o-unsplash.jpg">
+          <div class="overlay">Beautiful Beach</div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4 gallery-item beach">
+        <div class="img-box">
+          <img src="c:\Users\HP\Downloads\kikki-starr-FQQO4iQTXYY-unsplash.jpg">
+          <div class="overlay">Sunset Beach</div>
+        </div>
+      </div>
+
+      <!-- VILLA -->
+      <div class="col-md-4 mb-4 gallery-item villa">
+        <div class="img-box">
+          <img src="c:\Users\HP\Downloads\antonio-araujo-aXyuv9rBejE-unsplash.jpg">
+          <div class="overlay">Luxury Villa</div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4 gallery-item villa">
+        <div class="img-box">
+          <img src="c:\Users\HP\Downloads\sandip-roy-jEx-gDIB0CI-unsplash.jpg">
+          <div class="overlay">Ocean View Villa</div>
+        </div>
+      </div>
+
+      <!-- ACTIVITY -->
+      <div class="col-md-4 mb-4 gallery-item activity">
+        <div class="img-box">
+          <img src="c:\Users\HP\Downloads\ludovic-gauthier-AZijeluagac-unsplash.jpg">
+          <div class="overlay">Water Sports</div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4 gallery-item activity">
+        <div class="img-box">
+          <img src="c:\Users\HP\OneDrive\Pictures\bwg8wmcrubrjjgjaecys.jpg">
+          <div class="overlay">Snorkeling</div>
+        </div>
+      </div>
+
+    </div>
   </div>
 
-  <!-- GALLERY -->
-  <div class="row">
-
-    <!-- BEACH -->
-    <div class="col-md-4 mb-4 gallery-item beach">
-      <div class="img-box">
-        <img src="c:\Users\HP\Downloads\mariola-grobelska-Z_LkTUshc6o-unsplash.jpg">
-        <div class="overlay">Beautiful Beach</div>
+  <!-- MODAL -->
+  <div class="modal fade" id="galleryModal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <img id="modalImg" class="w-100">
       </div>
-    </div>
-
-    <div class="col-md-4 mb-4 gallery-item beach">
-      <div class="img-box">
-        <img src="c:\Users\HP\Downloads\kikki-starr-FQQO4iQTXYY-unsplash.jpg">
-        <div class="overlay">Sunset Beach</div>
-      </div>
-    </div>
-
-    <!-- VILLA -->
-    <div class="col-md-4 mb-4 gallery-item villa">
-      <div class="img-box">
-        <img src="c:\Users\HP\Downloads\antonio-araujo-aXyuv9rBejE-unsplash.jpg">
-        <div class="overlay">Luxury Villa</div>
-      </div>
-    </div>
-
-    <div class="col-md-4 mb-4 gallery-item villa">
-      <div class="img-box">
-        <img src="c:\Users\HP\Downloads\sandip-roy-jEx-gDIB0CI-unsplash.jpg">
-        <div class="overlay">Ocean View Villa</div>
-      </div>
-    </div>
-
-    <!-- ACTIVITY -->
-    <div class="col-md-4 mb-4 gallery-item activity">
-      <div class="img-box">
-        <img src="c:\Users\HP\Downloads\ludovic-gauthier-AZijeluagac-unsplash.jpg">
-        <div class="overlay">Water Sports</div>
-      </div>
-    </div>
-
-    <div class="col-md-4 mb-4 gallery-item activity">
-      <div class="img-box">
-        <img src="c:\Users\HP\OneDrive\Pictures\bwg8wmcrubrjjgjaecys.jpg">
-        <div class="overlay">Snorkeling</div>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<!-- MODAL -->
-<div class="modal fade" id="galleryModal">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <img id="modalImg" class="w-100">
     </div>
   </div>
-</div>
-<footer class="bg-dark text-light py-3 ">
+  <footer class="bg-dark text-light py-3 ">
     <ul class="nav justify-content-center border-bottom border-secondary pb-3 mb-3">
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Features</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Pricing</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-light">FAQs</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-light">About</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Home</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Features</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Pricing</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-light">FAQs</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-light">About</a></li>
     </ul>
 
     <p class="text-center text-secondary mb-0">
-        © 2025 IslandTour, Inc
+      © 2025 IslandTour, Inc
     </p>
-</footer>
+  </footer>
 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-<script>
-  // FILTER
-  const buttons = document.querySelectorAll(".filter-btn");
-  const items = document.querySelectorAll(".gallery-item");
+  <script>
+    // FILTER
+    const buttons = document.querySelectorAll(".filter-btn");
+    const items = document.querySelectorAll(".gallery-item");
 
-  buttons.forEach(btn => {
-    btn.addEventListener("click", () => {
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
 
-      buttons.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
+        buttons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
 
-      let filter = btn.getAttribute("data-filter");
+        let filter = btn.getAttribute("data-filter");
 
-      items.forEach(item => {
-        if (filter === "all" || item.classList.contains(filter)) {
-          item.style.display = "block";
-        } else {
-          item.style.display = "none";
-        }
+        items.forEach(item => {
+          if (filter === "all" || item.classList.contains(filter)) {
+            item.style.display = "block";
+          } else {
+            item.style.display = "none";
+          }
+        });
       });
     });
-  });
 
-  // MODAL IMAGE VIEW
-  document.querySelectorAll(".img-box img").forEach(img => {
-    img.addEventListener("click", () => {
-      document.getElementById("modalImg").src = img.src;
-      new bootstrap.Modal(document.getElementById("galleryModal")).show();
+    // MODAL IMAGE VIEW
+    document.querySelectorAll(".img-box img").forEach(img => {
+      img.addEventListener("click", () => {
+        document.getElementById("modalImg").src = img.src;
+        new bootstrap.Modal(document.getElementById("galleryModal")).show();
+      });
     });
-  });
-</script>
+  </script>
 
 </body>
+
 </html>
