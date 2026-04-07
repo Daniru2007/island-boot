@@ -118,6 +118,10 @@
             pointer-events: none;
             transition: transform 0.2s ease;
         }
+
+        .hero {
+            transition: background 0.5s ease-in-out;
+        }
     </style>
     <script>
         $(document).ready(function () {
@@ -152,6 +156,35 @@
                     left: e.pageX + 20 + "px" // 20px to the right of cursor
                 });
             });
+
+        });
+
+
+        $(document).ready(function () {
+
+            const images = {
+                "Home": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+                "Packages": "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
+                "Food": "https://images.unsplash.com/photo-1504674900247-0877df9cc836",
+                "Gallery": "https://images.unsplash.com/photo-1493558103817-58b2924bce98",
+                "Activities": "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
+                "Contact": "https://images.unsplash.com/photo-1526772662000-3f88f10405ff"
+            };
+
+            $(".navbar .nav-link").hover(
+                function () {
+                    let text = $(this).text();
+
+                    if (images[text]) {
+                        $(".hero").css("background",
+                            `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('${images[text]}')`
+                        );
+
+                        $(".hero").css("background-size", "cover");
+                        $(".hero").css("background-position", "center");
+                    }
+                },
+            );
 
         });
     </script>
