@@ -1,16 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Packages Page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Gravitas+One&family=Kulim+Park:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,700&family=Oswald:wght@200..700&family=Poiret+One&family=Space+Grotesk:wght@300..700&display=swap');
 
         body {
             font-family: 'Kulim Park', sans-serif;
+            background:
+                radial-gradient(circle, rgba(211, 0, 144, 0.25) 0.1px, transparent 1px) left/10px 10px repeat;
+
         }
 
         h1,
@@ -26,7 +32,12 @@
             -webkit-backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         }
+
+        .card {
+            transition: background-color 0.3s ease;
+        }
     </style>
+</head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-transparent fixed-top glass-navbar">
@@ -60,15 +71,22 @@
 
         </div>
     </nav>
-    <div class="bg-light text-center py-9" style="padding-top: 100px; padding-bottom: 100px;">
+
+    <!--Page Content Start-->
+
+    <!--Hero Banner-->
+    <div class="text-center py-9"
+        style="padding-top: 100px; padding-bottom: 100px; background: linear-gradient(to bottom, #54afff, #ffffff);">
         <div class="container">
             <h1 class="fw-bold fs-1 mb-2">Packages & Pricing</h1>
             <p class="text-muted">Choose the perfect package for your tropical getaway</p>
         </div>
     </div>
 
+    <!--Package Cards-->
     <div class="container text-center">
         <div class="row py-4">
+            <!--Card 01-->
             <div class="col">
                 <div class="card mb-4 rounded-3 shadow-sm">
                     <div class="card-header py-3">
@@ -88,6 +106,7 @@
                     </div>
                 </div>
             </div>
+            <!--Card 02-->
             <div class="col">
                 <div class="card mb-4 rounded-3 shadow-sm">
                     <div class="card-header py-3">
@@ -107,6 +126,7 @@
                     </div>
                 </div>
             </div>
+            <!--Card 03-->
             <div class="col">
                 <div class="card mb-4 rounded-3 shadow-sm">
                     <div class="card-header py-3">
@@ -127,6 +147,7 @@
                 </div>
             </div>
         </div>
+        <!--Card 04, with a new row-->
         <div class="row justify-content-center py-4">
             <div class="col-lg-8">
                 <div class="card mb-4 rounded-3 shadow-sm">
@@ -157,94 +178,148 @@
         </div>
 
     </div>
-    <section class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center mb-5 fw-bold">Package Comparison</h2>
-            <div class="table-responsive">
-                <table class="table table-striped table-bordered table-hover align-middle">
-                    <thead class="table-dark">
-                        <tr>
-                            <th>Feature</th>
-                            <th class="text-center">Starter</th>
-                            <th class="text-center">Standard</th>
-                            <th class="text-center">Premium</th>
-                            <th class="text-center">Ultra Luxury</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Room</td>
-                            <td class="text-center">Standard room with ocean view</td>
-                            <td class="text-center">Comfortable room with view</td>
-                            <td class="text-center">Luxury suite</td>
-                            <td class="text-center">Private villa with pool</td>
-                        </tr>
-                        <tr>
-                            <td>Meals</td>
-                            <td class="text-center">Daily breakfast</td>
-                            <td class="text-center">Breakfast & dinner</td>
-                            <td class="text-center">All-inclusive meals</td>
-                            <td class="text-center">Personal chef service</td>
-                        </tr>
-                        <tr>
-                            <td>Tours</td>
-                            <td class="text-center">One beach tour</td>
-                            <td class="text-center">Multiple tours</td>
-                            <td class="text-center">Private beach access</td>
-                            <td class="text-center">Private yacht + helicopter tour</td>
-                        </tr>
-                        <tr>
-                            <td>Water Sports</td>
-                            <td class="text-center">No</td>
-                            <td class="text-center">Diving and Jet ski</td>
-                            <td class="text-center">All water sports</td>
-                            <td class="text-center">VIP Access</td>
-                        </tr>
-                        <tr>
-                            <td>Spa Services</td>
-                            <td class="text-center">No</td>
-                            <td class="text-center">No</td>
-                            <td class="text-center">Premium spa</td>
-                            <td class="text-center">Unlimited</td>
-                        </tr>
-                        <tr>
-                            <td>Personal Guide</td>
-                            <td class="text-center">No</td>
-                            <td class="text-center">No</td>
-                            <td class="text-center">Yes</td>
-                            <td class="text-center">Yes</td>
-                        </tr>
-                        <tr>
-                            <td>Private Chef</td>
-                            <td class="text-center">No</td>
-                            <td class="text-center">No</td>
-                            <td class="text-center">No</td>
-                            <td class="text-center">Yes</td>
-                        </tr>
-                    </tbody>
-                </table>
+    </div>
+
+    <div class="container text-center py-5" id="checkout-section" style="display: none;">
+        <hr class="mb-5">
+        <h3 class="mb-3 fw-bold">Ready for your tropical getaway?</h3>
+        <p id="selected-package-text" class="lead text-success"></p>
+        <button class="btn btn-success btn-lg px-5 py-3 shadow">Proceed to Checkout</button>
+    </div>
+
+        <!--Comp table-->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <h2 class="text-center mb-5 fw-bold">Package Comparison</h2>
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-hover align-middle">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Feature</th>
+                                <th class="text-center">Starter</th>
+                                <th class="text-center">Standard</th>
+                                <th class="text-center">Premium</th>
+                                <th class="text-center">Ultra Luxury</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Room</td>
+                                <td class="text-center">Standard room with ocean view</td>
+                                <td class="text-center">Comfortable room with view</td>
+                                <td class="text-center">Luxury suite</td>
+                                <td class="text-center">Private villa with pool</td>
+                            </tr>
+                            <tr>
+                                <td>Meals</td>
+                                <td class="text-center">Daily breakfast</td>
+                                <td class="text-center">Breakfast & dinner</td>
+                                <td class="text-center">All-inclusive meals</td>
+                                <td class="text-center">Personal chef service</td>
+                            </tr>
+                            <tr>
+                                <td>Tours</td>
+                                <td class="text-center">One beach tour</td>
+                                <td class="text-center">Multiple tours</td>
+                                <td class="text-center">Private beach access</td>
+                                <td class="text-center">Private yacht + helicopter tour</td>
+                            </tr>
+                            <tr>
+                                <td>Water Sports</td>
+                                <td class="text-center">No</td>
+                                <td class="text-center">Diving and Jet ski</td>
+                                <td class="text-center">All water sports</td>
+                                <td class="text-center">VIP Access</td>
+                            </tr>
+                            <tr>
+                                <td>Spa Services</td>
+                                <td class="text-center">No</td>
+                                <td class="text-center">No</td>
+                                <td class="text-center">Premium spa</td>
+                                <td class="text-center">Unlimited</td>
+                            </tr>
+                            <tr>
+                                <td>Personal Guide</td>
+                                <td class="text-center">No</td>
+                                <td class="text-center">No</td>
+                                <td class="text-center">Yes</td>
+                                <td class="text-center">Yes</td>
+                            </tr>
+                            <tr>
+                                <td>Private Chef</td>
+                                <td class="text-center">No</td>
+                                <td class="text-center">No</td>
+                                <td class="text-center">No</td>
+                                <td class="text-center">Yes</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </div>
-    </section>
-    <footer class="bg-dark text-light py-3 ">
-        <ul class="nav justify-content-center border-bottom border-secondary pb-3 mb-3">
-            <li class="nav-item"><a href="index.html" class="nav-link px-2 text-light">Home</a></li>
-            <li class="nav-item"><a href="activities.html" class="nav-link px-2 text-light">Features</a></li>
-            <li class="nav-item"><a href="packages.html" class="nav-link px-2 text-light">Pricing</a></li>
-            <li class="nav-item"><a href="contact.html" class="nav-link px-2 text-light">FAQs</a></li>
-            <li class="nav-item"><a href="gallery.html" class="nav-link px-2 text-light">About</a></li>
-        </ul>
+        </section>
 
-        <p class="text-center text-secondary mb-0">
-            © 2025 IslandTour, Inc
-        </p>
-    </footer>
+        <!--Footer Section-->
+        <footer class="bg-dark text-light py-3 ">
+            <ul class="nav justify-content-center border-bottom border-secondary pb-3 mb-3">
+                <li class="nav-item"><a href="index.html" class="nav-link px-2 text-light">Home</a></li>
+                <li class="nav-item"><a href="activities.html" class="nav-link px-2 text-light">Features</a></li>
+                <li class="nav-item"><a href="packages.html" class="nav-link px-2 text-light">Pricing</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link px-2 text-light">FAQs</a></li>
+                <li class="nav-item"><a href="gallery.html" class="nav-link px-2 text-light">About</a></li>
+            </ul>
+
+            <p class="text-center text-secondary mb-0">
+                © 2025 IslandTour, Inc
+            </p>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(function () {
+
+                // change hover colors
+                $('.card').mouseenter(function () {
+                    $(this).css('background-color', '#f3f3f3');
+                });
+                $('.card').mouseleave(function () {
+                    $(this).css('background-color', 'white');
+                });
+
+                // Click event for booking a package
+                $('.btn-outline-primary').click(function () {
+
+                    // Reser all buttons
+                    $('.btn-outline-primary').html("Book Now")
+                        .css({
+                            'font-weight': '',
+                            'background-color': '',
+                            'color': '',
+                            'border-color': ''
+                        })
+                        .attr("disabled", false)
 
 
+                    // clicked button
+                    var pckName = $(this).closest('.card').find('h4').text(); // DOM Traversal
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+                    $(this).html("Selected " + pckName)
+                        .css({
+                            'font-weight': 'bold',
+                            'background-color': '#198754',
+                            'color': 'white',
+                            'border-color': '#198754'
+                        })
+                        .attr("disabled", true) //to remove double click
+                        .addClass("shadow-lg");
+
+                    // JS Effects/ checkout section
+                    $('#selected-package-text').html("You have selected the <strong>" + pckName + "</strong> package.");
+                    $('#checkout-section').fadeIn(500);
+                });
+            });
+        </script>
+
 </body>
 
 </html>
