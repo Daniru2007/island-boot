@@ -47,7 +47,9 @@
     .hero-section {
       background: linear-gradient(rgba(0, 0, 0, 0.227), rgba(0, 0, 0, 0.136)),
         url('/assests/michael-DXQB5D1njMY-unsplash.jpg') center/cover no-repeat;
+
       min-height: 480px;
+      filter: drop-shadow(5px)
     }
 
     .activity-card {
@@ -105,16 +107,23 @@
 
   <!--  HERO  -->
   <section
-    class="hero-section d-flex flex-column align-items-center justify-content-center text-white text-center px-3">
-    <h1 class="display-3 fw-bold mb-2 " style="font-size: 105px;">Place for Fun</h1>
+    class="hero-section d-flex flex-column align-items-center justify-content-center text-white text-center px-3 container-fluid">
+    <h1 class="display-3 fw-bold mb-2 text-sm md:text-base lg:text-xl" id="main-text" style="font-size: 105px;" >Place for Fun</h1>
     <p class="lead fw-normal opacity-75 mb-4">Where nature, culture &amp; adventure meet</p>
     <a href="#activities" class="btn btn-success btn-lg rounded-pill px-4 shadow">
       Explore Activities <i class="bi bi-arrow-down ms-2"></i>
     </a>
   </section>
 
+
+  <!-- <h1 class="fw-bold" style="font-size: clamp(40px, 8vw, 10px);">
+  Place for Fun
+</h1> -->
+
+
+
   <!--  MAIN  -->
-  <main class="container py-5">
+  <main class="container py-5 px-3">
 
     <!-- Intro -->
     <div class="text-center mb-5">
@@ -176,7 +185,7 @@
 
       <div class="row g-4">
 
-        <div class="col-sm-6 col-lg-3">
+        <div class="col-sm-6 col-lg-3" id="card1">
           <div class="card h-100 border-0 shadow-sm rounded-4 activity-card">
             <div class="card-body text-center p-4">
               <div
@@ -191,12 +200,12 @@
                 Tour</span>
             </div>
             <div class="card-footer bg-transparent border-0 text-center pb-4">
-              <a href="contact.html" class="btn btn-outline-success btn-sm rounded-pill px-4">Book Now</a>
+              <a href="contact.html" class="btn btn-outline-secondary btn-sm rounded-pill px-4 ">Book Now</a>
             </div>
           </div>
         </div>
 
-        <div class="col-sm-6 col-lg-3">
+        <div class="col-sm-6 col-lg-3" id="card2">
           <div class="card h-100 border-0 shadow-sm rounded-4 activity-card">
             <div class="card-body text-center p-4">
               <div
@@ -210,12 +219,12 @@
               <span class="badge bg-info-subtle text-info border border-info-subtle rounded-pill">Cultural</span>
             </div>
             <div class="card-footer bg-transparent border-0 text-center pb-4">
-              <a href="contact.html" class="btn btn-outline-info btn-sm rounded-pill px-4">Book Now</a>
+              <a href="contact.html" class="btn btn-outline-info btn-sm rounded-pill px-4" id="btn2-book">Book Now</a>
             </div>
           </div>
         </div>
 
-        <div class="col-sm-6 col-lg-3">
+        <div class="col-sm-6 col-lg-3" id="card3">
           <div class="card h-100 border-0 shadow-sm rounded-4 activity-card">
             <div class="card-body text-center p-4">
               <div
@@ -230,12 +239,13 @@
                 class="badge bg-warning-subtle text-warning border border-warning-subtle rounded-pill">Culinary</span>
             </div>
             <div class="card-footer bg-transparent border-0 text-center pb-4">
-              <a href="contact.html" class="btn btn-outline-warning btn-sm rounded-pill px-4">Book Now</a>
+              <a href="contact.html" class="btn btn-outline-warning btn-sm rounded-pill px-4" id="btn3-book">Book
+                Now</a>
             </div>
           </div>
         </div>
 
-        <div class="col-sm-6 col-lg-3">
+        <div class="col-sm-6 col-lg-3" id="card4">
           <div class="card h-100 border-0 shadow-sm rounded-4 activity-card">
             <div class="card-body text-center p-4">
               <div
@@ -249,7 +259,7 @@
               <span class="badge bg-danger-subtle text-danger border border-danger-subtle rounded-pill">Scenic</span>
             </div>
             <div class="card-footer bg-transparent border-0 text-center pb-4">
-              <a href="contact.html" class="btn btn-outline-danger btn-sm rounded-pill px-4">Book Now</a>
+              <a href="contact.html" class="btn btn-outline-danger btn-sm rounded-pill px-4" id="btn4-book">Book Now</a>
             </div>
           </div>
         </div>
@@ -258,89 +268,90 @@
     </section>
 
     <!-- COMPARISON TABLE-->
-      <section class="mb-5">
-        <div class="text-center mb-4">
-          <h2 class="mb-2">Why Choose Our Islands?</h2>
-          <p class="text-muted">See how we stand apart from the rest</p>
-        </div>
+    <section class="mb-5">
+      <div class="text-center mb-4">
+        <h2 class="mb-2">Why Choose Our Islands?</h2>
+        <p class="text-muted">See how we stand apart from the rest</p>
+      </div>
 
-        <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
-          <div class="table-responsive">
-            <table class="table table-hover align-middle mb-0">
-              <thead class="table-dark">
-                <tr>
-                  <th class="py-3 ps-4" style="width:32%">Feature</th>
-                  <th class="py-3 text-center text-success">
-                    <i class="bi bi-award-fill me-1"></i>IslandTour
-                  </th>
-                  <th class="py-3 text-center text-secondary">Other Islands</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="ps-4 fw-medium"><i class="bi bi-leaf-fill text-success me-2"></i>Unique Experience</td>
-                  <td class="text-center"><span
-                      class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-3">Authentic
-                      cinnamon plantation tours</span></td>
-                  <td class="text-center text-muted small">Mostly generic sightseeing</td>
-                </tr>
-                <tr class="table-light">
-                  <td class="ps-4 fw-medium"><i class="bi bi-water text-primary me-2"></i>Boat Safari</td>
-                  <td class="text-center"><span
-                      class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-3">Guided
-                      lagoon tours with wildlife</span></td>
-                  <td class="text-center text-muted small">Basic boat rides</td>
-                </tr>
-                <tr>
-                  <td class="ps-4 fw-medium"><i class="bi bi-globe2 text-info me-2"></i>Island Hopping</td>
-                  <td class="text-center"><span
-                      class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-3">Includes
-                      cultural village interaction</span></td>
-                  <td class="text-center text-muted small">Limited or no local engagement</td>
-                </tr>
-                <tr class="table-light">
-                  <td class="ps-4 fw-medium"><i class="bi bi-egg-fried text-warning me-2"></i>Food Experience</td>
-                  <td class="text-center"><span
-                      class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-3">Fresh,
-                      home-cooked Sri Lankan meals</span></td>
-                  <td class="text-center text-muted small">Standard restaurant food</td>
-                </tr>
-                <tr>
-                  <td class="ps-4 fw-medium"><i class="bi bi-activity text-danger me-2"></i>Activities Variety</td>
-                  <td class="text-center"><span
-                      class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-3">Kayaking,
-                      fishing, plantation tours</span></td>
-                  <td class="text-center text-muted small">Mostly limited to sightseeing</td>
-                </tr>
-                <tr class="table-light">
-                  <td class="ps-4 fw-medium"><i class="bi bi-tree-fill text-success me-2"></i>Atmosphere</td>
-                  <td class="text-center"><span
-                      class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-3">Peaceful,
-                      nature-focused</span></td>
-                  <td class="text-center text-muted small">Usually busier and more commercial</td>
-                </tr>
-                <tr>
-                  <td class="ps-4 fw-medium"><i class="bi bi-currency-dollar text-warning me-2"></i>Value for Money</td>
-                  <td class="text-center"><span
-                      class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-3">High
-                      experience value</span></td>
-                  <td class="text-center text-muted small">Pay more for fewer experiences</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      <!--  CTA BANNER -->
-      <div class="card border-0 rounded-4 overflow-hidden bg-success text-white text-center p-5 shadow">
-        <h2 class="mb-3">Plan Your Island Adventure</h2>
-        <p class="lead opacity-75 mb-4">Book your experience today and enjoy a relaxed Sri Lankan island trip.</p>
-        <div class="d-flex justify-content-center gap-3 flex-wrap">
-          <a href="contact.html" class="btn btn-light text-success fw-semibold rounded-pill px-5">Book Now</a>
-          <a href="packages.html" class="btn btn-outline-light rounded-pill px-5">Learn More</a>
+      <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+        <div class="table-responsive">
+          <table class="table table-hover align-middle mb-0">
+            <thead class="table-dark">
+              <tr>
+                <th class="py-3 ps-4" style="width:32%">Feature</th>
+                <th class="py-3 text-center text-success">
+                  <i class="bi bi-award-fill me-1"></i>IslandTour
+                </th>
+                <th class="py-3 text-center text-secondary">Other Islands</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="ps-4 fw-medium"><i class="bi bi-leaf-fill text-success me-2"></i>Unique Experience</td>
+                <td class="text-center"><span
+                    class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-5">Authentic
+                    cinnamon plantation tours</span></td>
+                <td class="text-center text-muted small">Mostly generic sightseeing</td>
+              </tr>
+              <tr class="table-light">
+                <td class="ps-4 fw-medium"><i class="bi bi-water text-primary me-2"></i>Boat Safari</td>
+                <td class="text-center"><span
+                    class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-5">Guided
+                    lagoon tours with wildlife</span></td>
+                <td class="text-center text-muted small">Basic boat rides</td>
+              </tr>
+              <tr>
+                <td class="ps-4 fw-medium"><i class="bi bi-globe2 text-info me-2"></i>Island Hopping</td>
+                <td class="text-center"><span
+                    class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-5">Includes
+                    cultural village interaction</span></td>
+                <td class="text-center text-muted small">Limited or no local engagement</td>
+              </tr>
+              <tr class="table-light">
+                <td class="ps-4 fw-medium"><i class="bi bi-egg-fried text-warning me-2"></i>Food Experience</td>
+                <td class="text-center"><span
+                    class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-5">Fresh,
+                    home-cooked Sri Lankan meals</span></td>
+                <td class="text-center text-muted small">Standard restaurant food</td>
+              </tr>
+              <tr>
+                <td class="ps-4 fw-medium"><i class="bi bi-activity text-danger me-2"></i>Activities Variety</td>
+                <td class="text-center"><span
+                    class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-5">Kayaking,
+                    fishing, plantation tours</span></td>
+                <td class="text-center text-muted small">Mostly limited to sightseeing</td>
+              </tr>
+              <tr class="table-light">
+                <td class="ps-4 fw-medium"><i class="bi bi-tree-fill text-success me-2"></i>Atmosphere</td>
+                <td class="text-center"><span
+                    class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-5">Peaceful,
+                    nature-focused</span></td>
+                <td class="text-center text-muted small">Usually busier and more commercial</td>
+              </tr>
+              <tr>
+                <td class="ps-4 fw-medium"><i class="bi bi-currency-dollar text-warning me-2"></i>Value for Money</td>
+                <td class="text-center"><span
+                    class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-5">High
+                    experience value</span></td>
+                <td class="text-center text-muted small">Pay more for fewer experiences</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
+    </section>
+
+    <!--  CTA BANNER -->
+    <div class="card border-0 rounded-4 overflow-hidden bg-success text-white text-center p-5 shadow">
+      <h2 class="mb-3">Plan Your Island Adventure</h2>
+      <p class="lead opacity-75 mb-4">Book your experience today and enjoy a relaxed Sri Lankan island trip.</p>
+      <div class="d-flex justify-content-center gap-3 flex-wrap">
+        <a href="contact.html" class="btn btn-light text-success fw-semibold rounded-pill px-5" id="bookNow-footer">Book
+          Now</a>
+        <a href="packages.html" class="btn btn-outline-light rounded-pill px-5">Learn More</a>
+      </div>
+    </div>
 
   </main>
   <footer class="bg-dark text-light py-3 ">
@@ -358,10 +369,152 @@
   </footer>
 
 
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
   <script>
-    document.querySelectorAll('[data-bs-toggle="tooltip"]')
-      .forEach(el => new bootstrap.Tooltip(el));
+    $(document).ready(function () {
+
+      // 1. HTML Events + CSS Manipulation + DOM Traversal
+
+
+      const cards = {
+        '#card1': '#fff0f3',
+        '#card2': '#e0f7fa',
+        '#card3': '#fff3cd',
+        '#card4': '#f8d7da'
+      };
+
+      //mapped colors for each card
+      Object.entries(cards).forEach(([cardSelector, color]) => {
+        $(cardSelector).on('click', function () {
+          $(this).css('background-color', color);
+        });
+      });
+
+      // Add fading for the main text change on hover
+
+     $('#main-text').hover(function() {
+    
+    $(this).fadeTo(500, 0, function() {
+      
+      $(this).text("Your Island Adventure Awaits!")
+             .addClass('text-active')
+             .fadeTo(300, 1); 
+    });
+  }, 
+  function() {
+    
+    $(this).stop().fadeTo(300, 0, function() {
+      $(this).text("Place for Fun")
+             .removeClass('text-active')
+             .fadeTo(300, 1);
+    });
+  }
+);
+
+      //  DOM Modification - 
+      
+      $('#btn2-book').click(function (e) {
+        e.preventDefault();
+
+        if ($(this).text() === "Book Now") {
+
+          $('#card2 .card-body').prepend('<div class="alert alert-info py-1 small">Checking availability...</div>');
+          $(this).text("Processing...");
+
+
+        } else {
+          $('#card2 .card-body .alert').remove();
+          $(this).text("Book Now");
+        }
+
+      });
+
+      // 3. DOM Attribute Modification - change the links
+      $('#btn3-book').on('mouseenter', function () {
+        $(this).attr('href', 'packages.html#culinary');
+        $(this).attr('title', 'View Culinary Packages');
+      });
+
+      // 4. JavaScript Effects
+      $('#card4 .card-title').click(function () {
+        $(this).next('.card-text').slideToggle('slow');
+      });
+
+
+      $('#btn4-book').click(function (e) {
+        e.preventDefault();
+        $(this).closest('.card').addClass('border-danger');
+      });
+
+
+      $('#card3').click(function () {
+        $(this).css('background-color', '#fff3cd');
+      });
+
+
+
+
+      $('#card2').dblclick(function () {
+        $(this).fadeOut(500).fadeIn(500);
+      });
+
+    });
+
+    $("#bookNow-footer").hover(
+      function () {
+        $(this).stop().animate({ opacity: 0 }, 200, function () {
+          $(this).text("Book Your Adventure!").animate({ opacity: 1 }, 200);
+        });
+      },
+      function () {
+        $(this).stop().animate({ opacity: 0 }, 200, function () {
+          $(this).text("Book Now").animate({ opacity: 1 }, 200);
+        });
+      }
+    );
+
+    // Image hover text (CSS modification)
+    $('.carousel-item').hover(
+      function () {
+
+        // get title text from caption
+        let text = $(this).find('h5').text();
+
+
+        $(this).css('position', 'relative');
+
+        // create overlay dynamically
+        let overlay = $('<div></div>').text(text).css({
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          color: 'white',
+          fontSize: '40px',
+          fontWeight: 'bold',
+          textShadow: '0 0 10px rgba(0,0,0,0.7)',
+          display: 'none'
+        });
+
+        // append and show
+        $(this).append(overlay);
+        overlay.fadeIn(300);
+      },
+
+      function () {
+        // remove overlay when mouse leaves
+        $(this).find('div').last().remove();
+      }
+    );
+
+
   </script>
 </body>
 
