@@ -106,6 +106,18 @@
             background-color: #ffffff !important;
             color: #000000 !important;
         }
+
+        #authorImg {
+            width: 150px;
+            display: none;
+            border-radius: 10px;
+            position: absolute;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            transition: transform 0.2s ease;
+        }
     </style>
     <script>
         $(document).ready(function () {
@@ -121,6 +133,24 @@
                 }
 
                 $("body").hide().fadeIn(500);
+            });
+
+        });
+        $(document).ready(function () {
+            $("blockquote").hover(
+                function () {
+                    $("#authorImg").fadeIn();
+                },
+                function () {
+                    $("#authorImg").fadeOut();
+                }
+            );
+
+            $("blockquote").mousemove(function (e) {
+                $("#authorImg").css({
+                    top: e.pageY + 20 + "px", // 20px below cursor
+                    left: e.pageX + 20 + "px" // 20px to the right of cursor
+                });
             });
 
         });
@@ -184,6 +214,9 @@
                     Ibn Battuta
                 </div>
             </blockquote>
+            <img id="authorImg"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Handmade_oil_painting_reproduction_of_Ibn_Battuta_in_Egypt%2C_a_painting_by_Hippolyte_Leon_Benett..jpg/250px-Handmade_oil_painting_reproduction_of_Ibn_Battuta_in_Egypt%2C_a_painting_by_Hippolyte_Leon_Benett..jpg"
+                alt="Ibn Battuta" style="width:150px; display:none; border-radius:10px;">
         </div>
     </section>
 
@@ -268,7 +301,7 @@
                     "The ocean stirs the heart, inspires the imagination, and brings eternal joy to the soul."
                 </p>
                 <div class="blockquote-footer">
-                    Wyland
+                    Ibn Battuta
                 </div>
             </blockquote>
         </div>
