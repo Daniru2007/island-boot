@@ -16,6 +16,8 @@
 
     body {
       font-family: 'Kulim Park', sans-serif;
+      background:
+          radial-gradient(circle, rgba(211, 0, 144, 0.25) 0.1px, transparent 1px) left/10px 10px repeat;
     }
 
     h1,
@@ -215,116 +217,116 @@
           <div class="overlay">Nature Trail</div>
         </div>
       </div>
-       <div class="col-md-4 mb-4 gallery-item beach">
+      <div class="col-md-4 mb-4 gallery-item beach">
         <div class="img-box">
           <img src="assests/005.png">
           <div class="overlay">Coastal Scene</div>
         </div>
       </div>
 
-
     </div>
+  </div>
 
-
-    <!-- MODAL -->
-    <div class="modal fade" id="galleryModal">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <img id="modalImg" class="w-100">
-        </div>
+  <!-- MODAL -->
+  <div class="modal fade" id="galleryModal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <img id="modalImg" class="w-100">
       </div>
     </div>
-    <footer class="bg-dark text-light py-3 ">
-      <ul class="nav justify-content-center border-bottom border-secondary pb-3 mb-3">
-        <li class="nav-item"><a href="index.html" class="nav-link px-2 text-light">Home</a></li>
-        <li class="nav-item"><a href="activities.html" class="nav-link px-2 text-light">Features</a></li>
-        <li class="nav-item"><a href="packages.html" class="nav-link px-2 text-light">Pricing</a></li>
-        <li class="nav-item"><a href="contact.html" class="nav-link px-2 text-light">FAQs</a></li>
-        <li class="nav-item"><a href="gallery.html" class="nav-link px-2 text-light">About</a></li>
-      </ul>
+  </div>
 
-      <p class="text-center text-secondary mb-0">
-        © 2025 IslandTour, Inc
-      </p>
-    </footer>
+  <footer class="bg-dark text-light py-3 ">
+    <ul class="nav justify-content-center border-bottom border-secondary pb-3 mb-3">
+      <li class="nav-item"><a href="index.html" class="nav-link px-2 text-light">Home</a></li>
+      <li class="nav-item"><a href="activities.html" class="nav-link px-2 text-light">Features</a></li>
+      <li class="nav-item"><a href="packages.html" class="nav-link px-2 text-light">Pricing</a></li>
+      <li class="nav-item"><a href="contact.html" class="nav-link px-2 text-light">FAQs</a></li>
+      <li class="nav-item"><a href="gallery.html" class="nav-link px-2 text-light">About</a></li>
+    </ul>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <p class="text-center text-secondary mb-0">
+      © 2025 IslandTour, Inc
+    </p>
+  </footer>
 
-    <script>
-      // FILTER
-      const buttons = document.querySelectorAll(".filter-btn");
-      const items = document.querySelectorAll(".gallery-item");
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-      buttons.forEach(btn => {
-        btn.addEventListener("click", () => {
+  <script>
+    // FILTER
+    const buttons = document.querySelectorAll(".filter-btn");
+    const items = document.querySelectorAll(".gallery-item");
 
-          buttons.forEach(b => b.classList.remove("active"));
-          btn.classList.add("active");
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
 
-          let filter = btn.getAttribute("data-filter");
+        buttons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
 
-          items.forEach(item => {
-            if (filter === "all" || item.classList.contains(filter)) {
-              item.style.display = "block";
-            } else {
-              item.style.display = "none";
-            }
-          });
-        });
-      });
+        let filter = btn.getAttribute("data-filter");
 
-      // MODAL IMAGE VIEW
-      document.querySelectorAll(".img-box img").forEach(img => {
-        img.addEventListener("click", () => {
-          document.getElementById("modalImg").src = img.src;
-          new bootstrap.Modal(document.getElementById("galleryModal")).show();
-        });
-      });
-
-      //Jquery Part - SA25610505
-      $(document).ready(function () {
-
-        // DOM Traversal
-        let total = $(".gallery-item").length;
-        console.log("Total images: " + total);
-
-        // DOM Modification
-        $("#changeTitle").click(function () {
-          $("h1").text("Explora Nuestra Isla");
-        });
-
-        // DOM Attribute Modification
-        $(".img-box img").click(function () {
-          $(this).attr("alt", "Image Clicked");
-        });
-
-        // CSS Manipulation
-        $("#colorBtn").click(function () {
-          $("body").css("background-color", "#6a6a6b");
-        });
-
-        // JavaScript Effects
-        $("#fadeBtn").click(function () {
-          $(".gallery-item").eq(1).fadeToggle();
-          $(".gallery-item").eq(3).fadeToggle();
-          $(".gallery-item").eq(0).fadeToggle();
-
-        });
-
-        // HTML Events
-        $(".img-box").hover(
-          function () {
-            $(this).css("border", "3px solid red");
-          },
-          function () {
-            $(this).css("border", "none");
+        items.forEach(item => {
+          if (filter === "all" || item.classList.contains(filter)) {
+            item.style.display = "block";
+          } else {
+            item.style.display = "none";
           }
-        );
+        });
+      });
+    });
+
+    // MODAL IMAGE VIEW
+    document.querySelectorAll(".img-box img").forEach(img => {
+      img.addEventListener("click", () => {
+        document.getElementById("modalImg").src = img.src;
+        new bootstrap.Modal(document.getElementById("galleryModal")).show();
+      });
+    });
+
+    //Jquery Part - SA25610505
+    $(document).ready(function () {
+
+      // DOM Traversal
+      let total = $(".gallery-item").length;
+      console.log("Total images: " + total);
+
+      // DOM Modification
+      $("#changeTitle").click(function () {
+        $("h1").text("Explora Nuestra Isla");
+      });
+
+      // DOM Attribute Modification
+      $(".img-box img").click(function () {
+        $(this).attr("alt", "Image Clicked");
+      });
+
+      // CSS Manipulation
+      $("#colorBtn").click(function () {
+        $("body").css("background-color", "#6a6a6b");
+      });
+
+      // JavaScript Effects
+      $("#fadeBtn").click(function () {
+        $(".gallery-item").eq(1).fadeToggle();
+        $(".gallery-item").eq(3).fadeToggle();
+        $(".gallery-item").eq(0).fadeToggle();
 
       });
 
-    </script>
+      // HTML Events
+      $(".img-box").hover(
+        function () {
+          $(this).css("border", "3px solid red");
+        },
+        function () {
+          $(this).css("border", "none");
+        }
+      );
+
+    });
+
+  </script>
 
 </body>
 

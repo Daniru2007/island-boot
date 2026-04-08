@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,260 +10,318 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gravitas+One&family=Kulim+Park:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,700&family=Oswald:wght@200..700&family=Poiret+One&family=Space+Grotesk:wght@300..700&display=swap');
+
         body {
-            background-color: hsl(210, 100%, 95%);
+            font-family: 'Kulim Park', sans-serif;
+            background:
+                radial-gradient(circle, rgba(211, 0, 144, 0.25) 0.1px, transparent 1px) left/10px 10px repeat;
         }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Poiret One', serif;
+        }
+
         .section-title {
             margin-top: 40px;
             margin-bottom: 20px;
             text-align: center;
             font-weight: bold;
         }
+
         .card img {
             height: 200px;
             object-fit: cover;
         }
     </style>
 </head>
+
 <body>
 
-    <div class="container text-center mt-4">
-        <h1><b>Food & Dining</b></h1>
-        <p>Enjoy delicious meals and amazing dining experiences on our island.</p>
-    </div>
-
-    <!-- Buttons for each task | SA25610506 -->
-    <div class="container text-center mt-4">
-
-    <button id="colorBtn" class="btn btn-primary">Eye Care Mode</button>
-    <button id="textBtn" class="btn btn-success">Availability</button>
-    <button id="imgBtn" class="btn btn-warning">Show More Images</button>
-    <button id="hideBtn" class="btn btn-danger">Remove Local Meals</button>
-    <button id="firstBtn" class="btn btn-info">Show Best Choice</button>
-
-</div>
-
-    <div class="container">
-        <h2 class="section-title">Local Dishes</h2>
-        <div class="row">
-
-            <div class="col-md-3">
-                <div class="card mb-4">
-                    <img src="assests/Bombata Rice.jpg" class="card-img-top" alt="Rice and Curry">
-                    <div class="card-body">
-                        <h5 class="card-title">Bombata Rice</h5>
-                        <p class="card-text">Traditional Local meal with Yellow rice and Garlic Roti.</p>
-                    </div>
+    <div class="container py-5">
+        <nav class="navbar navbar-expand-lg navbar-light bg-transparent fixed-top"
+            style="background: rgba(255, 255, 255, 0.353); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0, 0, 0, 0.1);">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">IslandTour</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="packages.html">Packages</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="foodanddining.html">Food</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="gallery.html">Gallery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="activities.html">Activities</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
+        </nav>
 
-            <div class="col-md-3">
-                <div class="card mb-4">
-                    <img src="assests/Grilled Chicken.webp" class="card-img-top" alt="Seafood">
-                    <div class="card-body">
-                        <h5 class="card-title">Grilled Chicken</h5>
-                        <p class="card-text">Enjoy fresh Chicken Grilled with Special BBQ Sauce.</p>
-                    </div>
-                </div>
-            </div>
+        <h1 class="text-center mb-4 fw-bold" style="padding-top: 60px; padding-bottom: 20px;">Food & Dining</h1>
+        <p class="text-center mb-4">Enjoy delicious meals and amazing dining experiences on our island.</p>
 
-            <div class="col-md-3">
-                <div class="card mb-4">
-                    <img src="assests/Kimchick Pasta.jpg" class="card-img-top" alt="Hoppers">
-                    <div class="card-body">
-                        <h5 class="card-title">Kimchick Pasta</h5>
-                        <p class="card-text">Popular Varient of Pasta for Dinner served with Chicken and Kimchi.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card mb-4">
-                    <img src="assests/Taliano Lasagna.jpg" class="card-img-top" alt="Hoppers">
-                    <div class="card-body">
-                        <h5 class="card-title">Taliano Lasagna</h5>
-                        <p class="card-text">This Lasagna comes with 3 layers including Chicken,Beef and Pork.</p>
-                    </div>
-                </div>
-            </div>
+        <!-- Buttons for each task | SA25610506 -->
+        <div class="container text-center mt-4">
+
+            <button id="colorBtn" class="btn btn-primary">Eye Care Mode</button>
+            <button id="textBtn" class="btn btn-success">Availability</button>
+            <button id="imgBtn" class="btn btn-warning">Show More Images</button>
+            <button id="hideBtn" class="btn btn-danger">Remove Local Meals</button>
+            <button id="firstBtn" class="btn btn-info">Show Best Choice</button>
 
         </div>
-    </div>
 
-    <div class="container">
-        <h2 class="section-title">Drinks & Beverages</h2>
-        <div class="row">
+        <div class="container">
+            <h2 class="section-title">Local Dishes</h2>
+            <div class="row">
 
-            <div class="col-md-3">
-                <div class="card mb-4">
-                    <img src="assests/Refresh Juice.webp" class="card-img-top" alt="Fruit Juice">
-                    <div class="card-body">
-                        <h5 class="card-title">Fresh Fruit Juice</h5>
-                        <p class="card-text">This is our Refreshing tropical fruit and you can get with many varients.</p>
+                <div class="col-md-3">
+                    <div class="card mb-4">
+                        <img src="assests/Bombata Rice.jpg" class="card-img-top" alt="Rice and Curry">
+                        <div class="card-body">
+                            <h5 class="card-title">Bombata Rice</h5>
+                            <p class="card-text">Traditional Local meal with Yellow rice and Garlic Roti.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-md-3">
-                <div class="card mb-4">
-                    <img src="assests/Mango Blast.jpg" class="card-img-top" alt="Coconut Water">
-                    <div class="card-body">
-                        <h5 class="card-title">Mango Blast</h5>
-                        <p class="card-text">Made with Natural Mango and It pops inside of your mouth.</p>
+                <div class="col-md-3">
+                    <div class="card mb-4">
+                        <img src="assests/Grilled Chicken.webp" class="card-img-top" alt="Seafood">
+                        <div class="card-body">
+                            <h5 class="card-title">Grilled Chicken</h5>
+                            <p class="card-text">Enjoy fresh Chicken Grilled with Special BBQ Sauce.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-md-3">
-                <div class="card mb-4">
-                    <img src="assests/Duriyan Juice.jpg" class="card-img-top" alt="Coffee">
-                    <div class="card-body">
-                        <h5 class="card-title">Duriyan Juice</h5>
-                        <p class="card-text">This is a special and Unique drink that made with Duriyan Fruit.</p>
+                <div class="col-md-3">
+                    <div class="card mb-4">
+                        <img src="assests/Kimchick Pasta.jpg" class="card-img-top" alt="Hoppers">
+                        <div class="card-body">
+                            <h5 class="card-title">Kimchick Pasta</h5>
+                            <p class="card-text">Popular Varient of Pasta for Dinner served with Chicken and Kimchi.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="card mb-4">
-                    <img src="assests/C'mon Lemon.webp" class="card-img-top" alt="Coffee">
-                    <div class="card-body">
-                        <h5 class="card-title">Chill Lemon</h5>
-                        <p class="card-text">A Unique Lemon Juice with Dragon Fruit served in a Clay Cup.</p>
+                <div class="col-md-3">
+                    <div class="card mb-4">
+                        <img src="assests/Taliano Lasagna.jpg" class="card-img-top" alt="Hoppers">
+                        <div class="card-body">
+                            <h5 class="card-title">Taliano Lasagna</h5>
+                            <p class="card-text">This Lasagna comes with 3 layers including Chicken,Beef and Pork.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
 
+            </div>
         </div>
-    </div>
 
-    <div class="container">
-        <h2 class="section-title">Dining Experiences</h2>
-        <div class="row">
+        <div class="container">
+            <h2 class="section-title">Drinks & Beverages</h2>
+            <div class="row">
 
-            <div class="col-md-3">
-                <div class="card mb-4">
-                    <img src="assests/Beach Dining.jpg" class="card-img-top" alt="Beach Dinner">
-                    <div class="card-body">
-                        <h5 class="card-title">Beach Dinner</h5>
-                        <p class="card-text">Romantic dinner setup by the beach at sunset.</p>
+                <div class="col-md-3">
+                    <div class="card mb-4">
+                        <img src="assests/Refresh Juice.webp" class="card-img-top" alt="Fruit Juice">
+                        <div class="card-body">
+                            <h5 class="card-title">Fresh Fruit Juice</h5>
+                            <p class="card-text">This is our Refreshing tropical fruit and you can get with many
+                                varients.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-md-3">
-                <div class="card mb-4">
-                    <img src="assests/buffet diining.jpg" class="card-img-top" alt="Buffet">
-                    <div class="card-body">
-                        <h5 class="card-title">Buffet Dining</h5>
-                        <p class="card-text">"All you can eat" buffet with local and international dishes.</p>
+                <div class="col-md-3">
+                    <div class="card mb-4">
+                        <img src="assests/Mango Blast.jpg" class="card-img-top" alt="Coconut Water">
+                        <div class="card-body">
+                            <h5 class="card-title">Mango Blast</h5>
+                            <p class="card-text">Made with Natural Mango and It pops inside of your mouth.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-md-3">
-                <div class="card mb-4">
-                    <img src="assests/family dining.png" class="card-img-top" alt="Family Dining">
-                    <div class="card-body">
-                        <h5 class="card-title">Family Dining</h5>
-                        <p class="card-text">Comfortable dining spaces perfect for families.</p>
+                <div class="col-md-3">
+                    <div class="card mb-4">
+                        <img src="assests/Duriyan Juice.jpg" class="card-img-top" alt="Coffee">
+                        <div class="card-body">
+                            <h5 class="card-title">Duriyan Juice</h5>
+                            <p class="card-text">This is a special and Unique drink that made with Duriyan Fruit.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-md-3">
-                <div class="card mb-4">
-                    <img src="assests/pool Dining.webp" class="card-img-top" alt="Family Dining">
-                    <div class="card-body">
-                        <h5 class="card-title">Float Dining</h5>
-                        <p class="card-text">Special dining space in a private Swimming Pool with Live Cooking.</p>
+                <div class="col-md-3">
+                    <div class="card mb-4">
+                        <img src="assests/C'mon Lemon.webp" class="card-img-top" alt="Coffee">
+                        <div class="card-body">
+                            <h5 class="card-title">Chill Lemon</h5>
+                            <p class="card-text">A Unique Lemon Juice with Dragon Fruit served in a Clay Cup.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
 
+            </div>
         </div>
+
+        <div class="container">
+            <h2 class="section-title">Dining Experiences</h2>
+            <div class="row">
+
+                <div class="col-md-3">
+                    <div class="card mb-4">
+                        <img src="assests/Beach Dining.jpg" class="card-img-top" alt="Beach Dinner">
+                        <div class="card-body">
+                            <h5 class="card-title">Beach Dinner</h5>
+                            <p class="card-text">Romantic dinner setup by the beach at sunset.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card mb-4">
+                        <img src="assests/buffet diining.jpg" class="card-img-top" alt="Buffet">
+                        <div class="card-body">
+                            <h5 class="card-title">Buffet Dining</h5>
+                            <p class="card-text">"All you can eat" buffet with local and international dishes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card mb-4">
+                        <img src="assests/family dining.png" class="card-img-top" alt="Family Dining">
+                        <div class="card-body">
+                            <h5 class="card-title">Family Dining</h5>
+                            <p class="card-text">Comfortable dining spaces perfect for families.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card mb-4">
+                        <img src="assests/pool Dining.webp" class="card-img-top" alt="Family Dining">
+                        <div class="card-body">
+                            <h5 class="card-title">Float Dining</h5>
+                            <p class="card-text">Special dining space in a private Swimming Pool with Live Cooking.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <script>
+            $(document).ready(function () {
+
+                $("#colorBtn").click(function () {
+                    $("body").css("background-color", "#707070");
+                    $(".card").css("background-color", "lightblue");
+                });
+
+                $("#textBtn").click(function () {
+                    $(".card-title").eq(0).text("Available");
+                    $(".card-title").eq(0).css("color", "Green");
+
+                    $(".card-title").eq(1).text("Available");
+                    $(".card-title").eq(1).css("color", "Green");
+
+                    $(".card-title").eq(2).text("Unavailable");
+                    $(".card-title").eq(2).css("color", "Red");
+
+                    $(".card-title").eq(3).text("Available");
+                    $(".card-title").eq(3).css("color", "Green");
+
+                    $(".card-title").eq(4).text("Unavailable");
+                    $(".card-title").eq(4).css("color", "Red");
+
+                    $(".card-title").eq(5).text("Available");
+                    $(".card-title").eq(5).css("color", "Green");
+
+                    $(".card-title").eq(6).text("Available");
+                    $(".card-title").eq(6).css("color", "Green");
+
+                    $(".card-title").eq(7).text("Available");
+                    $(".card-title").eq(7).css("color", "Green");
+
+                    $(".card-title").eq(8).text("Available");
+                    $(".card-title").eq(8).css("color", "Green");
+
+                    $(".card-title").eq(9).text("Available");
+                    $(".card-title").eq(9).css("color", "Green");
+
+                    $(".card-title").eq(10).text("Available");
+                    $(".card-title").eq(10).css("color", "Green");
+
+                    $(".card-title").eq(11).text("Available");
+                    $(".card-title").eq(11).css("color", "Green");
+                });
+
+                $("#imgBtn").click(function () {
+                    $(".card img").eq(0).attr("src", "bombata real 2.jpg");
+                    $(".card img").eq(1).attr("src", "chicken 2.jpg");
+                    $(".card img").eq(2).attr("src", "kimchick 2.webp");
+                    $(".card img").eq(3).attr("src", "lasagna 2.jpg");
+                    $(".card img").eq(4).attr("src", "fj 2.jpg");
+                    $(".card img").eq(5).attr("src", "mango 2.jpg");
+                    $(".card img").eq(6).attr("src", "duriyan 2.jpg");
+                    $(".card img").eq(7).attr("src", "chill 2.jpg");
+                });
+
+                $("#hideBtn").click(function () {
+                    $(".card").eq(0).fadeOut();
+                    $(".card").eq(3).fadeOut();
+                    $(".card").eq(4).fadeOut();
+                    $(".card").eq(6).fadeOut();
+                });
+
+                $("#firstBtn").click(function () {
+                    $(".card").eq(0).css("border", "3px solid red");
+                    $(".card").eq(2).css("border", "3px solid red");
+                    $(".card").eq(5).css("border", "3px solid red");
+                    $(".card").eq(7).css("border", "3px solid red");
+                    $(".card").eq(8).css("border", "3px solid red");
+                    $(".card").eq(11).css("border", "3px solid red");
+                });
+
+            });
+        </script>
     </div>
 
-    <script>
-$(document).ready(function(){
+    <footer class="bg-dark text-light py-3 ">
+        <ul class="nav justify-content-center border-bottom border-secondary pb-3 mb-3">
+            <li class="nav-item"><a href="index.html" class="nav-link px-2 text-light">Home</a></li>
+            <li class="nav-item"><a href="activities.html" class="nav-link px-2 text-light">Features</a></li>
+            <li class="nav-item"><a href="packages.html" class="nav-link px-2 text-light">Pricing</a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-link px-2 text-light">FAQs</a></li>
+            <li class="nav-item"><a href="gallery.html" class="nav-link px-2 text-light">About</a></li>
+        </ul>
 
-    $("#colorBtn").click(function(){
-        $("body").css("background-color", "#707070");
-        $(".card").css("background-color", "lightblue");
-    });
-
-    $("#textBtn").click(function(){
-        $(".card-title").eq(0).text("Available");
-        $(".card-title").eq(0).css("color", "Green");
-
-        $(".card-title").eq(1).text("Available");
-        $(".card-title").eq(1).css("color", "Green");
-
-        $(".card-title").eq(2).text("Unavailable");
-         $(".card-title").eq(2).css("color", "Red");
-
-        $(".card-title").eq(3).text("Available");
-         $(".card-title").eq(3).css("color", "Green");
-         
-        $(".card-title").eq(4).text("Unavailable");
-         $(".card-title").eq(4).css("color", "Red");
-         
-        $(".card-title").eq(5).text("Available");
-         $(".card-title").eq(5).css("color", "Green");
-
-        $(".card-title").eq(6).text("Available");
-         $(".card-title").eq(6).css("color", "Green");
-         
-        $(".card-title").eq(7).text("Available");
-         $(".card-title").eq(7).css("color", "Green");
-         
-        $(".card-title").eq(8).text("Available");
-         $(".card-title").eq(8).css("color", "Green"); 
-         
-        $(".card-title").eq(9).text("Available");
-         $(".card-title").eq(9).css("color", "Green"); 
-         
-        $(".card-title").eq(10).text("Available");
-         $(".card-title").eq(10).css("color", "Green"); 
-         
-        $(".card-title").eq(11).text("Available");
-         $(".card-title").eq(11).css("color", "Green");  
-    });
-
-    $("#imgBtn").click(function(){
-        $(".card img").eq(0).attr("src", "bombata real 2.jpg");
-        $(".card img").eq(1).attr("src", "chicken 2.jpg");
-        $(".card img").eq(2).attr("src", "kimchick 2.webp");
-        $(".card img").eq(3).attr("src", "lasagna 2.jpg");
-        $(".card img").eq(4).attr("src", "fj 2.jpg");
-        $(".card img").eq(5).attr("src", "mango 2.jpg");
-        $(".card img").eq(6).attr("src", "duriyan 2.jpg");
-        $(".card img").eq(7).attr("src", "chill 2.jpg");
-    });
-
-    $("#hideBtn").click(function(){
-        $(".card").eq(0).fadeOut();
-        $(".card").eq(3).fadeOut();
-        $(".card").eq(4).fadeOut();
-        $(".card").eq(6).fadeOut();
-    });
-
-    $("#firstBtn").click(function(){
-        $(".card").eq(0).css("border", "3px solid red");
-        $(".card").eq(2).css("border", "3px solid red");
-        $(".card").eq(5).css("border", "3px solid red");
-        $(".card").eq(7).css("border", "3px solid red");
-        $(".card").eq(8).css("border", "3px solid red");
-        $(".card").eq(11).css("border", "3px solid red");
-    });
-
-});
-</script>
-
-    <footer class="text-center mt-4 mb-3">
-        <p>© 2026 Island Resort. All rights reserved.</p>
+        <p class="text-center text-secondary mb-0">
+            © 2025 IslandTour, Inc
+        </p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
+
 </html>
