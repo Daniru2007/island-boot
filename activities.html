@@ -108,7 +108,8 @@
   <!--  HERO  -->
   <section
     class="hero-section d-flex flex-column align-items-center justify-content-center text-white text-center px-3 container-fluid">
-    <h1 class="display-3 fw-bold mb-2 text-sm md:text-base lg:text-xl" id="main-text" style="font-size: 105px;" >Place for Fun</h1>
+    <h1 class="display-3 fw-bold mb-2 text-sm md:text-base lg:text-xl" id="main-text" style="font-size: 105px;">Place
+      for Fun</h1>
     <p class="lead fw-normal opacity-75 mb-4">Where nature, culture &amp; adventure meet</p>
     <a href="#activities" class="btn btn-success btn-lg rounded-pill px-4 shadow">
       Explore Activities <i class="bi bi-arrow-down ms-2"></i>
@@ -178,7 +179,8 @@
     <section id="activities" class="mb-5">
       <div class="d-flex align-items-center justify-content-between mb-4 flex-wrap gap-2">
         <h2 class="mb-0">Our Activities</h2>
-        <span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-3 py-2" id="exp-text">
+        <span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-3 py-2"
+          id="exp-text">
           4 Experiences
         </span>
       </div>
@@ -351,7 +353,15 @@
           Now</a>
         <a href="packages.html" class="btn btn-outline-light rounded-pill px-5">Learn More</a>
       </div>
+
     </div>
+    <div class="container mt-5 flex-row">
+      <h2 class="mt-5">Current Activities</h2>
+      <div id="dynamic-activities" class="row g-4"></div>
+    </div>
+
+    <div class="mb-5">
+
 
   </main>
   <footer class="bg-dark text-light py-3 ">
@@ -400,27 +410,27 @@
 
       // Add fading for the main text change on hover
 
-     $('#main-text').hover(function() {
-    
-    $(this).fadeTo(500, 0, function() {
-      
-      $(this).text("Your Island Adventure Awaits!")
-             .addClass('text-active')
-             .fadeTo(300, 1); 
-    });
-  }, 
-  function() {
-    
-    $(this).stop().fadeTo(300, 0, function() {
-      $(this).text("Place for Fun")
-             .removeClass('text-active')
-             .fadeTo(300, 1);
-    });
-  }
-);
+      $('#main-text').hover(function () {
+
+        $(this).fadeTo(500, 0, function () {
+
+          $(this).text("Your Island Adventure Awaits!")
+            .addClass('text-active')
+            .fadeTo(300, 1);
+        });
+      },
+        function () {
+
+          $(this).stop().fadeTo(300, 0, function () {
+            $(this).text("Place for Fun")
+              .removeClass('text-active')
+              .fadeTo(300, 1);
+          });
+        }
+      );
 
       //  DOM Modification - 
-      
+
       $('#btn2-book').click(function (e) {
         e.preventDefault();
 
@@ -517,7 +527,72 @@
 
 
 
+
+    $(document).ready(function () {
+
+      $.ajax({
+        url: 'backend/activity.php',
+        type: 'GET',
+        dataType: 'json',
+
+        success: function (data) {
+
+          let html = '';
+
+          data.forEach(item => {
+
+            html += `
+          <div class="col-sm-10 col-lg-3 d-flex flex-column ">
+            <div class="card h-100 border-0 shadow-sm rounded-4 activity-card">
+
+              <div class="card-body text-center p-4">
+
+                <h5 class="card-title fw-semibold">
+                  ${item.name}
+                </h5>
+
+                <p class="card-text text-muted small">
+                  ${item.description}
+                </p>
+
+                <p class="fw-bold text-success mb-2">
+                  $${item.price}
+                </p>
+
+                <span class="badge bg-primary-subtle text-primary rounded-pill">
+                  ${item.type}
+                </span>
+
+              </div>
+
+            <button class="btn btn-outline-info rounded-pill mt-auto mb-4 align-self-center" 
+        style="padding: 2px 10px; font-size: 11px; min-width: 80px;">
+  Book Now
+</button>
+
+            </div>
+          </div>
+        `;
+          });
+
+          $('#dynamic-activities').html(html);
+
+          $('#exp-text').text(`${data.length} Experiences`);
+        },
+
+        error: function (xhr, status, error) {
+          console.error("Error loading activities:", error);
+        }
+
+      });
+
+    });
+
+
+
   </script>
+
+
 </body>
 
 </html>
