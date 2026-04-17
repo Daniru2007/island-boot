@@ -4,7 +4,8 @@
     "name": "Boat Safari",
     "category": "Adventure",
     "price": 5000,
-    "location": "Bentota",
+    "description": "Experience the thrill of a boat safari, exploring the island's coastline and marine life.",
+    "discount": 10,
     "duration": "2 hours"
   },
   {
@@ -12,7 +13,8 @@
     "name": "Island Hopping",
     "category": "Cultural",
     "price": 7000,
-    "location": "Mirissa",
+    "description": "Explore nearby islands and their unique cultures.",
+    "discount": 5,
     "duration": "4 hours"
   }
 ]
