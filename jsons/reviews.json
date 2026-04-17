@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "name": "Madeesha Perera",
+        "role": "Traveler",
+        "rating": 5,
+        "comment": "Well planned trip and friendly staff. The beach sunset was beautiful.",
+        "image": "https:\/\/randomuser.me\/api\/portraits\/women\/1.jpg",
+        "location": "Unawatuna",
+        "date": "2026-04-01"
+    },
+    {
+        "id": 2,
+        "name": "Kasun Silva",
+        "role": "Explorer",
+        "rating": 5,
+        "comment": "Good food options and clean rooms. I enjoyed the activity package.",
+        "image": "https:\/\/randomuser.me\/api\/portraits\/men\/2.jpg",
+        "location": "Mirissa",
+        "date": "2026-04-02"
+    },
+    {
+        "id": 3,
+        "name": "Dinithi Fernando",
+        "role": "Photographer",
+        "rating": 4,
+        "comment": "Great photo spots and a calm environment. I will visit again.",
+        "image": "https:\/\/randomuser.me\/api\/portraits\/women\/3.jpg",
+        "location": "Ella",
+        "date": "2026-04-03"
+    },
+    {
+        "id": 4,
+        "name": "Ravindu Jayasinghe",
+        "role": "Adventurer",
+        "rating": 5,
+        "comment": "Boat ride and snorkeling were fun. Booking process was simple.",
+        "image": "https:\/\/randomuser.me\/api\/portraits\/men\/4.jpg",
+        "location": "Hikkaduwa",
+        "date": "2026-04-04"
+    },
+    {
+        "id": 5,
+        "name": "Sajini Madushani",
+        "role": "Blogger",
+        "rating": 5,
+        "comment": "Nice atmosphere for a weekend break. Staff were helpful throughout.",
+        "image": "https:\/\/randomuser.me\/api\/portraits\/women\/5.jpg",
+        "location": "Bentota",
+        "date": "2026-04-05"
+    },
+    {
+        "id": 6,
+        "name": "Malinda Rajapaksha",
+        "role": "Traveler",
+        "rating": 4,
+        "comment": "Worth the price and well managed. We had a comfortable stay.",
+        "image": "https:\/\/randomuser.me\/api\/portraits\/men\/6.jpg",
+        "location": "Galle",
+        "date": "2026-04-06"
+    }
+]

@@ -187,6 +187,78 @@
             );
 
         });
+
+
+        function loadReviews() {
+
+            $.get("backend/reviews.php?action=getAllReviews", function (data) {
+
+                let reviews = data;
+                let html = "";
+
+                for (let i = 0; i < reviews.length; i += 3) {
+
+                    let group = reviews.slice(i, i + 3);
+
+                    html += `<div class="carousel-item ${i === 0 ? "active" : ""}">
+                        <div class="row text-center">`;
+
+                    group.forEach(r => {
+
+                        html += `
+                <div class="col-md-4 mb-4">
+                    <img src="${r.image}" class="rounded-circle mb-3" width="120">
+                    <h5>${r.name}</h5>
+                    <p class="text-muted">${r.role}</p>
+                    <p>“${r.comment}”</p>
+                    <p class="text-warning">${"★".repeat(r.rating)}</p>
+                </div>
+                `;
+                    });
+
+                    html += `</div></div>`;
+                }
+
+                $("#reviewContainer").html(html);
+            });
+        }
+        $(document).ready(function () {
+            loadReviews();
+        });
+
+        $(document).ready(function () {
+
+            $("#submitReview").click(function () {
+
+                let review = {
+                    name: $("#name").val(),
+                    location: $("#location").val(),
+                    rating: $("#rating").val(),
+                    comment: $("#comment").val()
+                };
+
+                $.ajax({
+                    url: "backend/reviews.php?action=addReview",
+                    type: "POST",
+                    contentType: "application/json",
+                    data: JSON.stringify(review),
+                    success: function (res) {
+
+                        alert("Review Added!");
+
+                        // reload reviews without refreshing page
+                        loadReviews();
+
+                        // clear form
+                        $("#name").val("");
+                        $("#location").val("");
+                        $("#comment").val("");
+                        $("#rating").val("5");
+                    }
+                });
+            });
+        })
+
     </script>
 </head>
 
@@ -347,7 +419,7 @@
 
             <div id="reviewCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
 
-                <div class="carousel-inner">
+                <div class="carousel-inner" id="reviewContainer">
 
                     <div class="carousel-item active">
                         <div class="row text-center">
@@ -431,6 +503,38 @@
         </div>
 
     </section>
+
+
+    <div class="container mb-5 mt-5">
+        <h4 class="text-center mb-3">Add Your Review</h4>
+
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+
+                <input type="text" id="name" class="form-control mb-2" placeholder="Your Name">
+
+                <input type="text" id="location" class="form-control mb-2" placeholder="Location">
+
+                <select id="rating" class="form-control mb-2">
+                    <option value="5">★★★★★</option>
+                    <option value="4">★★★★☆</option>
+                    <option value="3">★★★☆☆</option>
+                    <option value="2">★★☆☆☆</option>
+                    <option value="1">★☆☆☆☆</option>
+                </select>
+
+                <textarea id="comment" class="form-control mb-2" placeholder="Your Review"></textarea>
+
+                <button id="submitReview" class="btn btn-success w-100">
+                    Submit Review
+                </button>
+
+            </div>
+        </div>
+    </div>
+
+
+
     <footer class="bg-dark text-light py-3 ">
         <ul class="nav justify-content-center border-bottom border-secondary pb-3 mb-3">
             <li class="nav-item"><a href="index.html" class="nav-link px-2 text-light">Home</a></li>
