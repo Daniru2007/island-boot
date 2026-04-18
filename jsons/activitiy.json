@@ -1,20 +1,11 @@
 [
-  {
-    "id": 1,
-    "name": "Boat Safari",
-    "category": "Adventure",
-    "price": 5000,
-    "description": "Experience the thrill of a boat safari, exploring the island's coastline and marine life.",
-    "discount": 10,
-    "duration": "2 hours"
-  },
-  {
-    "id": 2,
-    "name": "Island Hopping",
-    "category": "Cultural",
-    "price": 7000,
-    "description": "Explore nearby islands and their unique cultures.",
-    "discount": 5,
-    "duration": "4 hours"
-  }
+   
+    {
+        "id": 1776480830,
+        "name": "Island hopping",
+        "description": "Explore nearby islands, interact with local villages and soak in\r\nunique culture.",
+        "type": "Cultural",
+        "price": "200",
+        "discount": "10"
+    }
 ]

@@ -541,8 +541,14 @@
 
           data.forEach(item => {
 
+            let discountBadge = item.discount > 0 ?`<div class="badge bg-danger text-white rounded-pill " 
+         style="top: 15px; right: 15px; z-index: 100; padding: 8px 12px; position: absolute; font-size: 12px; top: 7px; right: 12px;">
+         ${item.discount}% OFF
+    </div>` : ``;
+
             html += `
-          <div class="col-sm-10 col-lg-3 d-flex flex-column ">
+          <div class="col-sm-10 col-lg-3 d-flex flex-column position-relative">
+            ${discountBadge}
             <div class="card h-100 border-0 shadow-sm rounded-4 activity-card">
 
               <div class="card-body text-center p-4">
