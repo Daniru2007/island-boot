@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "Nimal Perera",
+    "email": "nimal@gmail.com",
+    "age": 30,
+    "city": "Colombo",
+    "phone": "0771234567"
+  },
+  {
+    "id": 2,
+    "name": "Kamal Silva",
+    "email": "kamal@gmail.com",
+    "age": 27,
+    "city": "Kandy",
+    "phone": "0719876543"
+  }
+]
