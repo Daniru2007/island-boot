@@ -14,9 +14,7 @@
 
         body {
             font-family: 'Kulim Park', sans-serif;
-            background:
-                radial-gradient(circle, rgba(211, 0, 144, 0.25) 0.1px, transparent 1px) left/10px 10px repeat;
-
+            background: radial-gradient(circle, rgba(211, 0, 144, 0.25) 0.1px, transparent 1px) left/10px 10px repeat;
         }
 
         h1,
@@ -48,136 +46,28 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="packages.html">Packages</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="foodanddining.html">Food</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="gallery.html">Gallery</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="activities.html">Activities</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="packages.html">Packages</a></li>
+                    <li class="nav-item"><a class="nav-link" href="foodanddining.html">Food</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="activities.html">Activities</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
             </div>
-
         </div>
     </nav>
 
-    <!--Page Content Start-->
-
-    <!--Hero Banner-->
     <div class="text-center py-9"
-        style="padding-top: 100px; padding-bottom: 100px; background: linear-gradient(to bottom, #54afff, #ffffff);">
+        style="padding-top: 100px; padding-bottom: 100px; background: linear-gradient(to bottom, #b0b0b0, #166f7d);">
         <div class="container">
             <h1 class="fw-bold fs-1 mb-2">Packages & Pricing</h1>
             <p class="text-muted">Choose the perfect package for your tropical getaway</p>
         </div>
     </div>
 
-    <!--Package Cards-->
     <div class="container text-center">
-        <div class="row py-4">
-            <!--Card 01-->
-            <div class="col">
-                <div class="card mb-4 rounded-3 shadow-sm">
-                    <div class="card-header py-3">
-                        <h4 class="my-0 fw-normal">Starter</h4>
-                    </div>
-                    <div class="card-body">
-                        <h1 class="card-title pricing-card-title text-center">
-                            <span class="display-5">LKR 124,000</span>
-                        </h1>
-                        <ul class="list-unstyled mt-3 mb-4">
-                            <li>Standard room with ocean view</li>
-                            <li>Daily breakfast</li>
-                            <li>One beach tour</li>
-                            <li class="text-decoration-line-through">Water sports activities</li>
-                            <li class="text-decoration-line-through">Spa services</li>
-                        </ul> <button type="button" class="w-100 btn btn-lg btn-outline-primary">Book Now</button>
-                    </div>
-                </div>
-            </div>
-            <!--Card 02-->
-            <div class="col">
-                <div class="card mb-4 rounded-3 shadow-sm">
-                    <div class="card-header py-3">
-                        <h4 class="my-0 fw-normal">Standard</h4>
-                    </div>
-                    <div class="card-body">
-                        <h1 class="card-title pricing-card-title text-center">
-                            <span class="display-5">LKR 249,600</span>
-                        </h1>
-                        <ul class="list-unstyled mt-3 mb-4">
-                            <li>Comfortable room with view</li>
-                            <li>Breakfast & dinner included</li>
-                            <li>Multiple tours</li>
-                            <li>Diving and Jet ski</li>
-                            <li class="text-decoration-line-through">Premium spa access</li>
-                        </ul> <button type="button" class="w-100 btn btn-lg btn-outline-primary">Book Now</button>
-                    </div>
-                </div>
-            </div>
-            <!--Card 03-->
-            <div class="col">
-                <div class="card mb-4 rounded-3 shadow-sm">
-                    <div class="card-header py-3">
-                        <h4 class="my-0 fw-normal">Premium</h4>
-                    </div>
-                    <div class="card-body">
-                        <h1 class="card-title pricing-card-title text-center">
-                            <span class="display-5">LKR 499,500</span>
-                        </h1>
-                        <ul class="list-unstyled mt-3 mb-4">
-                            <li>Luxury suite</li>
-                            <li>All-inclusive meals</li>
-                            <li>Private beach access</li>
-                            <li>All water sports & Premium spa</li>
-                            <li>Personal tour guide</li>
-                        </ul> <button type="button" class="w-100 btn btn-lg btn-outline-primary">Book Now</button>
-                    </div>
-                </div>
-            </div>
+        <div class="row py-4" id="package-card-container">
         </div>
-        <!--Card 04, with a new row-->
-        <div class="row justify-content-center py-4">
-            <div class="col-lg-8">
-                <div class="card mb-4 rounded-3 shadow-sm">
-                    <div class="card-header py-3">
-                        <h4 class="my-0 fw-normal">Ultra Luxury</h4>
-                    </div>
-
-                    <div class="card-body">
-                        <h1 class="card-title pricing-card-title text-center">
-                            <span class="display-5">LKR 1,050,000</span>
-                        </h1>
-
-                        <ul class="list-unstyled mt-3 mb-4">
-                            <li>Private villa with pool</li>
-                            <li>Personal chef service</li>
-                            <li>Private yacht tours</li>
-                            <li>VIP water sports access</li>
-                            <li>Unlimited spa treatments</li>
-                            <li>Private helicopter tour</li>
-                        </ul>
-
-                        <button type="button" class="w-100 btn btn-lg btn-outline-primary">
-                            Book Now
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
     </div>
 
     <div class="container text-center py-5" id="checkout-section" style="display: none;">
@@ -187,7 +77,6 @@
         <button class="btn btn-success btn-lg px-5 py-3 shadow">Proceed to Checkout</button>
     </div>
 
-    <!--Comp table-->
     <section class="py-5 bg-light">
         <div class="container">
             <h2 class="text-center mb-5 fw-bold">Package Comparison</h2>
@@ -196,69 +85,62 @@
                     <thead class="table-dark">
                         <tr>
                             <th>Feature</th>
-                            <th class="text-center">Starter</th>
-                            <th class="text-center">Standard</th>
-                            <th class="text-center">Premium</th>
-                            <th class="text-center">Ultra Luxury</th>
+                            <th class="text-center">Room</th>
+                            <th class="text-center">Meals</th>
+                            <th class="text-center">Tours</th>
+                            <th class="text-center">Water Sports</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>Room</td>
-                            <td class="text-center">Standard room with ocean view</td>
-                            <td class="text-center">Comfortable room with view</td>
-                            <td class="text-center">Luxury suite</td>
-                            <td class="text-center">Private villa with pool</td>
-                        </tr>
-                        <tr>
-                            <td>Meals</td>
-                            <td class="text-center">Daily breakfast</td>
-                            <td class="text-center">Breakfast & dinner</td>
-                            <td class="text-center">All-inclusive meals</td>
-                            <td class="text-center">Personal chef service</td>
-                        </tr>
-                        <tr>
-                            <td>Tours</td>
-                            <td class="text-center">One beach tour</td>
-                            <td class="text-center">Multiple tours</td>
-                            <td class="text-center">Private beach access</td>
-                            <td class="text-center">Private yacht + helicopter tour</td>
-                        </tr>
-                        <tr>
-                            <td>Water Sports</td>
-                            <td class="text-center">No</td>
-                            <td class="text-center">Diving and Jet ski</td>
-                            <td class="text-center">All water sports</td>
-                            <td class="text-center">VIP Access</td>
-                        </tr>
-                        <tr>
-                            <td>Spa Services</td>
-                            <td class="text-center">No</td>
-                            <td class="text-center">No</td>
-                            <td class="text-center">Premium spa</td>
-                            <td class="text-center">Unlimited</td>
-                        </tr>
-                        <tr>
-                            <td>Personal Guide</td>
-                            <td class="text-center">No</td>
-                            <td class="text-center">No</td>
-                            <td class="text-center">Yes</td>
-                            <td class="text-center">Yes</td>
-                        </tr>
-                        <tr>
-                            <td>Private Chef</td>
-                            <td class="text-center">No</td>
-                            <td class="text-center">No</td>
-                            <td class="text-center">No</td>
-                            <td class="text-center">Yes</td>
-                        </tr>
+                    <tbody id="comparison-table-body">
                     </tbody>
                 </table>
             </div>
         </div>
     </section>
 
-    <!--Footer Section-->
+    <section class="py-5 bg-light border-top">
+        <div class="container">
+            <h2 class="text-center mb-4">Request a Custom Trip</h2>
+            <p class="text-center text-muted mb-5">Tell us what you need, and we'll add it to our registry.</p>
+            <div class="row justify-content-center">
+                <div class="col-md-6 bg-white p-4 shadow-sm rounded">
+                    <form id="custom-pkg-form">
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Your Name / Group Name</label>
+                            <input type="text" id="c-name" class="form-control" placeholder="e.g. Silva Family Trip"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Number of Travelers</label>
+                            <input type="number" id="c-qty" class="form-control" value="1" min="1">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Preferred Activity</label>
+                            <select id="c-activity" class="form-select">
+                                <option value="Beach & Snorkeling">Beach & Snorkeling</option>
+                                <option value="Hiking & Nature">Hiking & Nature</option>
+                                <option value="Culture & Food">Culture & Food</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Duration (Days)</label>
+                            <input type="number" id="c-days" class="form-control" value="3" min="1">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Budget Type</label>
+                            <select id="c-budget" class="form-select">
+                                <option value="Standard (Fixed 150k)">Standard (Fixed LKR 150,000)</option>
+                                <option value="Luxury (Fixed 500k)">Luxury (Fixed LKR 500,000)</option>
+                            </select>
+                        </div>
+                        <button type="button" id="btn-submit-custom" class="btn btn-success w-100 mt-3">Save
+                            Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer class="bg-dark text-light py-3 ">
         <ul class="nav justify-content-center border-bottom border-secondary pb-3 mb-3">
             <li class="nav-item"><a href="index.html" class="nav-link px-2 text-light">Home</a></li>
@@ -267,101 +149,95 @@
             <li class="nav-item"><a href="contact.html" class="nav-link px-2 text-light">FAQs</a></li>
             <li class="nav-item"><a href="gallery.html" class="nav-link px-2 text-light">About</a></li>
         </ul>
-
-        <p class="text-center text-secondary mb-0">
-            © 2025 IslandTour, Inc
-        </p>
+        <p class="text-center text-secondary mb-0">© 2025 IslandTour, Inc</p>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         $(document).ready(function () {
+            // 1. AJAX GET: Load all data from JSON via PHP
+            function loadData() {
+                $.get("backend/packages.php?action=getAll", function (data) {
+                    let cardHtml = "";
+                    let tableHtml = "";
 
-            // change hover colors
-            $('.card').mouseenter(function () {
-                $(this).css('background-color', '#f3f3f3');
+                    data.forEach(pkg => {
+                        cardHtml += `
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100 rounded-3 shadow-sm">
+                                <div class="card-header py-3"><h4>${pkg.name}</h4></div>
+                                <div class="card-body">
+                                    <h1 class="card-title pricing-card-title text-center">
+                                        <span class="display-6">LKR ${pkg.price.toLocaleString()}</span>
+                                    </h1>
+                                    <ul class="list-unstyled mt-3 mb-4 text-start ps-3">
+                                        <li>✔ ${pkg.room}</li>
+                                        <li>✔ ${pkg.meals}</li>
+                                        <li>✔ ${pkg.tours} Beach Tours</li>
+                                        <li>${pkg.waterSports ? "✔ Water sports" : "<del>Water sports</del>"}</li>
+                                    </ul> 
+                                    <button type="button" class="w-100 btn btn-lg btn-outline-primary btn-book" data-id="${pkg.id}">Book Now</button>
+                                </div>
+                            </div>
+                        </div>`;
+
+                        tableHtml += `
+                        <tr>
+                            <td class="fw-bold">${pkg.name}</td>
+                            <td class="text-center">${pkg.room}</td>
+                            <td class="text-center">${pkg.meals}</td>
+                            <td class="text-center">${pkg.tours}</td>
+                            <td class="text-center">${pkg.waterSports ? "Yes" : "No"}</td>
+                        </tr>`;
+                    });
+                    $('#package-card-container').html(cardHtml);
+                    $('#comparison-table-body').html(tableHtml);
+                });
+            }
+
+            loadData();
+
+            // 2. AJAX GET: Specific record for booking
+            $(document).on('click', '.btn-book', function () {
+                let pkgId = $(this).data('id');
+                $.get("backend/packages.php?action=getOne&id=" + pkgId, function (pkg) {
+                    $('#selected-package-text').html("You selected: <strong>" + pkg.name + "</strong> for LKR " + pkg.price.toLocaleString());
+                    $('#checkout-section').fadeIn(500);
+                    $('html, body').animate({ scrollTop: $("#checkout-section").offset().top }, 500);
+                });
             });
-            $('.card').mouseleave(function () {
-                $(this).css('background-color', 'white');
+
+            // 3. AJAX POST: Save custom request (JSON object with 5+ pairs)
+            $('#btn-submit-custom').click(function () {
+                let customData = {
+                    name: $('#c-name').val(),
+                    travelers: $('#c-qty').val(),
+                    activity: $('#c-activity').val(),
+                    duration: $('#c-days').val(),
+                    budget: $('#c-budget').val(),
+                    status: "Request Received"
+                };
+
+                if (!customData.name) return alert("Please enter a name.");
+
+                $.ajax({
+                    url: "backend/packages.php?action=add",
+                    type: "POST",
+                    contentType: "application/json",
+                    data: JSON.stringify(customData),
+                    success: function () {
+                        alert("Request saved successfully to JSON!");
+                        $('#custom-pkg-form')[0].reset();
+                        loadData();
+                    }
+                });
             });
 
-            // Click event for booking a package
-            $('.btn-outline-primary').click(function () {
-
-                // Reser all buttons
-                $('.btn-outline-primary').html("Book Now")
-                    .css({
-                        'font-weight': '',
-                        'background-color': '',
-                        'color': '',
-                        'border-color': ''
-                    })
-                    .attr("disabled", false)
-
-
-                // clicked button
-                var pckName = $(this).closest('.card').find('h4').text(); // DOM Traversal
-
-
-                $(this).html("Selected " + pckName)
-                    .css({
-                        'font-weight': 'bold',
-                        'background-color': '#198754',
-                        'color': 'white',
-                        'border-color': '#198754'
-                    })
-                    .attr("disabled", true) //to remove double click
-
-                // JS Effects/ checkout section
-                $('#selected-package-text').html("You have selected the <strong>" + pckName + "</strong> package.");
-                $('#checkout-section').fadeIn(500);
-
-            });
-
-
-
-
-
-
-
-            
-
-           
-
-            //test/dbclick-back to defualt
-            /*
-            $('.btn-outline-primary').dblclick(function () {
-                $('.btn-outline-primary').html("Book Now")
-                    .css({
-                        'font-weight': '',
-                        'background-color': '',
-                        'color': '',
-                        'border-color': ''
-                    })
-
-           
-                $('#checkout-section').fadeOut(600);
-            })
-
-            //test-table row sep colorz
-            */
-            /*
-            $('.table tbody tr').mouseenter(function () {
-                $(this).find('td').attr('style','background-color: red !important')
-            })
-        
-            $('.table tbody tr').mouseleave(function () {
-                $(this).find('td').css({
-                    'background-color': ''
-                })
-            })
-
-            $('li.text-decoration-line-through').attr('style','color : red')
-            */
+            // UI Effects
+            $(document).on('mouseenter', '.card', function () { $(this).css('background-color', '#f3f3f3'); });
+            $(document).on('mouseleave', '.card', function () { $(this).css('background-color', 'white'); });
         });
     </script>
-
 </body>
 
 </html>

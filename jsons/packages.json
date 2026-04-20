@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "name": "Starter",
+        "price": 124000,
+        "room": "Standard ocean view",
+        "meals": "Daily Breakfast",
+        "tours": 1,
+        "waterSports": false
+    },
+    {
+        "id": 2,
+        "name": "Standard",
+        "price": 249600,
+        "room": "Comfortable room",
+        "meals": "Breakfast & Dinner",
+        "tours": 3,
+        "waterSports": true
+    },
+    {
+        "id": 3,
+        "name": "Premium",
+        "price": 499500,
+        "room": "Luxury suite",
+        "meals": "All-inclusive meals",
+        "tours": 5,
+        "waterSports": true
+    },
+    {
+        "id": 4,
+        "name": "Ultra Luxury",
+        "price": 1050000,
+        "room": "Private villa with pool",
+        "meals": "Personal chef service",
+        "tours": 10,
+        "waterSports": true
+    },
+    {
+        "id": 5,
+        "name": "Custom Package",
+        "price": 500000,
+        "room": "Custom Accommodation",
+        "meals": "Flexible Dining",
+        "tours": 3,
+        "waterSports": true
+    }
+]
