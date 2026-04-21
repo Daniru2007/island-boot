@@ -1,6 +1,5 @@
 <?php
 header("Content-Type: application/json");
-
 // Path to your JSON file - ensure this path is correct relative to this php file
 $file = '../jsons/packages.json';
 
@@ -11,12 +10,12 @@ $packages = json_decode($json_data, true);
 // Get the action from the AJAX URL
 $action = $_GET['action'] ?? '';
 
-// --- ACTION: GET ALL ---
+// --- Get all Records---
 if ($action == 'getAll') {
     echo json_encode($packages);
 } 
 
-// --- ACTION: GET ONE SPECIFIC RECORD ---
+// --- Get One Specific Record ---
 elseif ($action == 'getOne' && isset($_GET['id'])) {
     $id = $_GET['id'];
     foreach ($packages as $pkg) {
@@ -27,7 +26,7 @@ elseif ($action == 'getOne' && isset($_GET['id'])) {
     }
 }
 
-// --- ACTION: ADD/UPDATE CUSTOM (POST REQUEST) ---
+// ---add/update custom (post) request---
 elseif ($action == 'add' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     // Read the JSON data sent from the AJAX frontend
     $input = file_get_contents('php://input');

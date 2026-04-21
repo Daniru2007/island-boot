@@ -14,7 +14,8 @@
 
         body {
             font-family: 'Kulim Park', sans-serif;
-            background: radial-gradient(circle, rgba(211, 0, 144, 0.25) 0.1px, transparent 1px) left/10px 10px repeat;
+            background: linear-gradient(135deg, #e8f5f9 0%, #f1f8e9 50%, #fff9e6 100%);
+            min-height: 100vh;
         }
 
         h1,
@@ -33,6 +34,15 @@
 
         .card {
             transition: background-color 0.3s ease;
+        }
+
+
+        .glass-form {
+            background: rgba(255, 255, 255, 0.15) !important;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
         }
     </style>
 </head>
@@ -66,11 +76,13 @@
     </div>
 
     <div class="container text-center">
+        <!-- Display: All records from JSON file in card format -->
         <div class="row py-4" id="package-card-container">
         </div>
     </div>
 
     <div class="container text-center py-5" id="checkout-section" style="display: none;">
+        <!-- Display: Specific record selected by user -->
         <hr class="mb-5">
         <h3 class="mb-3 fw-bold">Ready for your tropical getaway?</h3>
         <p id="selected-package-text" class="lead text-success"></p>
@@ -80,6 +92,7 @@
     <section class="py-5 bg-light">
         <div class="container">
             <h2 class="text-center mb-5 fw-bold">Package Comparison</h2>
+            <!-- Table: Display all JSON records in tabular format -->
             <div class="table-responsive">
                 <table class="table table-striped table-bordered table-hover align-middle">
                     <thead class="table-dark">
@@ -98,22 +111,26 @@
         </div>
     </section>
 
+    <!-- UI SECTION: Data input form with textboxes (Bootstrap + jQuery) -->
     <section class="py-5 bg-light border-top">
         <div class="container">
             <h2 class="text-center mb-4">Request a Custom Trip</h2>
             <p class="text-center text-muted mb-5">Tell us what you need, and we'll add it to our registry.</p>
             <div class="row justify-content-center">
-                <div class="col-md-6 bg-white p-4 shadow-sm rounded">
+                <div class="col-md-6 glass-form p-4 rounded">
                     <form id="custom-pkg-form">
+                        <!-- Input field 1: Name (fields for AJAX POST) -->
                         <div class="mb-3">
                             <label class="form-label fw-bold">Your Name / Group Name</label>
                             <input type="text" id="c-name" class="form-control" placeholder="e.g. Silva Family Trip"
                                 required>
                         </div>
+                        <!-- Input field 2: Number of Travelers -->
                         <div class="mb-3">
                             <label class="form-label fw-bold">Number of Travelers</label>
                             <input type="number" id="c-qty" class="form-control" value="1" min="1">
                         </div>
+                        <!-- Input field 3: Preferred Activity -->
                         <div class="mb-3">
                             <label class="form-label fw-bold">Preferred Activity</label>
                             <select id="c-activity" class="form-select">
@@ -122,10 +139,12 @@
                                 <option value="Culture & Food">Culture & Food</option>
                             </select>
                         </div>
+                        <!-- Input field 4: Duration (Days) -->
                         <div class="mb-3">
                             <label class="form-label fw-bold">Duration (Days)</label>
                             <input type="number" id="c-days" class="form-control" value="3" min="1">
                         </div>
+                        <!-- Input field 5: Budget Type -->
                         <div class="mb-3">
                             <label class="form-label fw-bold">Budget Type</label>
                             <select id="c-budget" class="form-select">
@@ -155,7 +174,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         $(document).ready(function () {
-            // 1. AJAX GET: Load all data from JSON via PHP
+            // CLASS TASK 5: REQUIREMENT 1 - READ ALL RECORDS FROM JSON 
+            // AJAX GET: Load all records from jsons/packages.json via backend/packages.php
             function loadData() {
                 $.get("backend/packages.php?action=getAll", function (data) {
                     let cardHtml = "";
@@ -197,38 +217,41 @@
 
             loadData();
 
-            // 2. AJAX GET: Specific record for booking
+            // CLASS TASK 5: REQUIREMENT 2 - READ ONE RECORD FROM JSON 
+            // AJAX GET: Fetch specific package by ID from backend
             $(document).on('click', '.btn-book', function () {
                 let pkgId = $(this).data('id');
                 $.get("backend/packages.php?action=getOne&id=" + pkgId, function (pkg) {
                     $('#selected-package-text').html("You selected: <strong>" + pkg.name + "</strong> for LKR " + pkg.price.toLocaleString());
                     $('#checkout-section').fadeIn(500);
                     $('html, body').animate({ scrollTop: $("#checkout-section").offset().top }, 500);
-                });
+                });     
             });
 
-            // 3. AJAX POST: Save custom request (JSON object with 5+ pairs)
+            // CLASS TASK 5: REQUIREMENT 3 - ADD NEW RECORD TO JSON 
+            // AJAX POST: Send new package data (5+ JSON pairs) to backend for JSON storage
             $('#btn-submit-custom').click(function () {
                 let customData = {
-                    name: $('#c-name').val(),
-                    travelers: $('#c-qty').val(),
-                    activity: $('#c-activity').val(),
-                    duration: $('#c-days').val(),
-                    budget: $('#c-budget').val(),
-                    status: "Request Received"
+                    name: $('#c-name').val(),           // Field 1: Name
+                    travelers: $('#c-qty').val(),       // Field 2: Travelers
+                    activity: $('#c-activity').val(),   // Field 3: Activity
+                    duration: $('#c-days').val(),       // Field 4: Duration
+                    budget: $('#c-budget').val(),       // Field 5: Budget
+                    status: "Request Received"          // Field 6: Status
                 };
 
                 if (!customData.name) return alert("Please enter a name.");
 
+                // POST request with JSON data to backend (uses json_decode in PHP)
                 $.ajax({
-                    url: "backend/packages.php?action=add",
+                    url: "backend/packages.php?action=add",   // Backend processes with json_decode
                     type: "POST",
                     contentType: "application/json",
-                    data: JSON.stringify(customData),
+                    data: JSON.stringify(customData),  // Convert to JSON string
                     success: function () {
                         alert("Request saved successfully to JSON!");
                         $('#custom-pkg-form')[0].reset();
-                        loadData();
+                        loadData();  // Refresh display with new data
                     }
                 });
             });
