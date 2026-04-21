@@ -212,6 +212,9 @@
                     <p class="text-muted">${r.role}</p>
                     <p>“${r.comment}”</p>
                     <p class="text-warning">${"★".repeat(r.rating)}</p>
+                    <button class="btn btn-sm btn-outline-primary viewReview" data-id="${r.id}">
+                        View More
+                    </button>
                 </div>
                 `;
                     });
@@ -258,6 +261,23 @@
                 });
             });
         })
+
+        $(document).on("click", ".viewReview", function () {
+
+            let id = $(this).data("id");
+
+            $.get(`backend/reviews.php?action=getReview&id=${id}`, function (data) {
+
+                alert(`
+                    Name: ${data.name}
+                    Location: ${data.location}
+                    Rating: ${data.rating}
+                    Comment: ${data.comment}
+                    Date: ${data.date}
+                `);
+
+            });
+        });
 
     </script>
 </head>
