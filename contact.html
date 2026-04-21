@@ -165,7 +165,7 @@
                 </div>
                 <div class="col-sm-6">
                   <label class="form-label text-muted small fw-semibold text-uppercase">Room Type</label>
-                  <select class="form-select" id="roomType" required >
+                  <select class="form-select" id="roomType" required>
                     <option value="">Select room</option>
                     <option>Beach Villa</option>
                     <option>Water Bungalow</option>
@@ -333,79 +333,163 @@
     </p>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
-$(document).ready(function () {
+    // Define functions globally BEFORE document ready
+    function loadAllBookings() {
+      console.log("Loading all bookings...");
+      $.ajax({
+        type: "GET",
+        url: "backend/contact.php",
+        dataType: "json",
+        success: function (data) {
+          console.log("All Records fetched:", data);
 
-  // SUBMIT FORM
-  $("#bookingForm").submit(function (e) {
-    e.preventDefault();
+          $("#loadingMsg").addClass("d-none");
 
-    // Collect Data
-    let formData = {
-      name: $("#userName").val(),
-      email: $("#userEmail").val(),
-      phone: $("#userPhone").val(),
-      checkin: $("#checkIn").val(),
-      checkout: $("#checkOut").val(),
-      guests: $("#guests").val(),
-      room: $("#roomType").val()
-    };
+          if (!data || data.length === 0) {
+            console.log("No data found");
+            $("#emptyMsg").removeClass("d-none");
+            $("#bookingsContainer").addClass("d-none");
+            return;
+          }
 
-    // SEND DATA TO PHP
-    $.ajax({
-      type: "POST",
-      url: "backend/contact.php",
-      data: formData,
-      dataType: "json",
-      success: function (response) {
-        
-        if (response.error) {
-          alert("Error: " + response.error);
-          return;
+          console.log("Displaying " + data.length + " records");
+          $("#emptyMsg").addClass("d-none");
+          $("#bookingsContainer").removeClass("d-none");
+
+          // Clear existing table rows
+          $("#bookingsTable").empty();
+
+          // Populate table with records
+          $.each(data, function (index, record) {
+            let row = `<tr onclick="fetchOneRecord(${record.id})" style="cursor:pointer;">
+            <td>${record.id}</td>
+            <td>${record.name}</td>
+            <td>${record.email}</td>
+            <td>${record.phone}</td>
+            <td>${record.checkin}</td>
+            <td>${record.checkout}</td>
+            <td>${record.guests}</td>
+            <td>${record.room}</td>
+            <td>${record.created_at}</td>
+          </tr>`;
+            $("#bookingsTable").append(row);
+          });
+        },
+        error: function (xhr, status, error) {
+          console.error("Error fetching records:", status, error);
+          console.error("Response:", xhr.responseText);
+          $("#loadingMsg").removeClass("d-none").html("<i class='bi bi-exclamation-circle me-2'></i>Error loading bookings: " + error);
         }
+      });
+    }
 
-        // Success UI
-        $("#successMsg").removeClass("d-none").fadeIn();
+    // READ ONE RECORD - Fetch a specific booking by ID
+    function fetchOneRecord(id) {
+      console.log("Fetching record with ID:", id);
+      $.ajax({
+        type: "GET",
+        url: "backend/contact.php?id=" + id,
+        dataType: "json",
+        success: function (data) {
+          console.log("Single Record fetched:", data);
 
-        // Disable form after submit
-        $("#bookingForm input, #bookingForm select, #bookingForm textarea")
-          .attr("disabled", true);
+          if (data.error) {
+            alert("Record not found: " + data.error);
+            return;
+          }
 
-        // Read all records
-        fetchAllRecords();
-      },
-      error: function () {
-        alert("Error connecting to server");
-      }
+          // Display record details in alert
+          let details = `
+Booking Details:
+━━━━━━━━━━━━━━
+ID: ${data.id}
+Name: ${data.name}
+Email: ${data.email}
+Phone: ${data.phone}
+Check-in: ${data.checkin}
+Check-out: ${data.checkout}
+Guests: ${data.guests}
+Room: ${data.room}
+Booked On: ${data.created_at}
+          `;
+          alert(details);
+        },
+        error: function (xhr, status, error) {
+          console.error("Error fetching record:", status, error);
+          console.error("Response:", xhr.responseText);
+          alert("Error fetching record details: " + error);
+        }
+      });
+    }
+
+    $(document).ready(function () {
+
+      // Load all bookings on page load
+      console.log("Document ready - loading bookings");
+      loadAllBookings();
+
+      // SUBMIT FORM - Add new booking
+      $("#bookingForm").submit(function (e) {
+        e.preventDefault();
+
+        // Collect Data
+        let formData = {
+          name: $("#userName").val(),
+          email: $("#userEmail").val(),
+          phone: $("#userPhone").val(),
+          checkin: $("#checkIn").val(),
+          checkout: $("#checkOut").val(),
+          guests: $("#guests").val(),
+          room: $("#roomType").val()
+        };
+
+        console.log("Submitting form data:", formData);
+
+        // SEND DATA TO PHP (using json_encode in backend)
+        $.ajax({
+          type: "POST",
+          url: "backend/contact.php",
+          data: formData,
+          dataType: "json",
+          success: function (response) {
+            console.log("Form submission response:", response);
+
+            if (response.error) {
+              alert("Error: " + response.error);
+              return;
+            }
+
+            // Success UI
+            $("#successMsg").removeClass("d-none").fadeIn();
+            setTimeout(function () {
+              $("#successMsg").fadeOut();
+            }, 4000);
+
+            // Reset form
+            $("#bookingForm")[0].reset();
+
+            // Re-enable form
+            $("#bookingForm input, #bookingForm select, #bookingForm textarea")
+              .attr("disabled", false);
+
+            // Refresh table with all records (using json_decode in backend)
+            setTimeout(function () {
+              loadAllBookings();
+            }, 500);
+          },
+          error: function (xhr, status, error) {
+            console.error("Form submission error:", status, error);
+            console.error("Response:", xhr.responseText);
+            alert("Error connecting to server: " + error);
+          }
+        });
+      });
+
     });
-  });
-
-  // READ ALL RECORDS
-  function fetchAllRecords() {
-    $.ajax({
-      type: "GET",
-      url: "backend/contact.php",
-      dataType: "json",
-      success: function (data) {
-        console.log("All Records:", data);
-      }
-    });
-  }
-
-  // READ ONE RECORD
-  function fetchOneRecord(id) {
-    $.ajax({
-      type: "GET",
-      url: "backend/contact.php?id=" + id,
-      success: function (data) {
-        console.log("Single Record:", JSON.parse(data));
-      }
-    });
-  }
-
-});
-</script>
+  </script>
 </body>
 
 </html>
