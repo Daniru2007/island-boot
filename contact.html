@@ -44,6 +44,10 @@
       border: none;
       border-radius: 8px;
     }
+
+    .table-hover tbody tr:hover {
+      background-color: #f8f9fa;
+    }
   </style>
 </head>
 
@@ -115,11 +119,11 @@
               <div class="row g-3 mb-3">
                 <div class="col-sm-6">
                   <label class="form-label text-muted small fw-semibold text-uppercase">Full Name</label>
-                  <input type="text" class="form-control" placeholder="Your full name" required>
+                  <input type="text" id="userName" class="form-control" placeholder="Your full name" required>
                 </div>
                 <div class="col-sm-6">
                   <label class="form-label text-muted small fw-semibold text-uppercase">Email</label>
-                  <input type="email" class="form-control" placeholder="you@example.com" required>
+                  <input type="email" id="userEmail" class="form-control" placeholder="you@example.com" required>
                 </div>
               </div>
 
@@ -127,7 +131,7 @@
                 <label class="form-label text-muted small fw-semibold text-uppercase">Phone Number</label>
                 <div class="input-group">
                   <span class="input-group-text bg-white"><i class="bi bi-telephone text-success"></i></span>
-                  <input type="tel" class="form-control" placeholder="+94 72 971 7155" required>
+                  <input type="tel" id="userPhone" class="form-control" placeholder="+94 72 971 7155" required>
                 </div>
               </div>
 
@@ -136,14 +140,14 @@
                   <label class="form-label text-muted small fw-semibold text-uppercase">Check-in</label>
                   <div class="input-group">
                     <span class="input-group-text bg-white"><i class="bi bi-calendar-check text-success"></i></span>
-                    <input type="date" class="form-control" required>
+                    <input type="date" id="checkIn" class="form-control" required>
                   </div>
                 </div>
                 <div class="col-sm-6">
                   <label class="form-label text-muted small fw-semibold text-uppercase">Check-out</label>
                   <div class="input-group">
                     <span class="input-group-text bg-white"><i class="bi bi-calendar-x text-success"></i></span>
-                    <input type="date" class="form-control" required>
+                    <input type="date" id="checkOut" class="form-control" required>
                   </div>
                 </div>
               </div>
@@ -151,7 +155,7 @@
               <div class="row g-3 mb-3">
                 <div class="col-sm-6">
                   <label class="form-label text-muted small fw-semibold text-uppercase">Guests</label>
-                  <select class="form-select" required>
+                  <select class="form-select" id="guests" required>
                     <option value="">Select guests</option>
                     <option>1 Person</option>
                     <option>2 Persons</option>
@@ -161,7 +165,7 @@
                 </div>
                 <div class="col-sm-6">
                   <label class="form-label text-muted small fw-semibold text-uppercase">Room Type</label>
-                  <select class="form-select">
+                  <select class="form-select" id="roomType" required>
                     <option value="">Select room</option>
                     <option>Beach Villa</option>
                     <option>Water Bungalow</option>
@@ -261,6 +265,59 @@
 
       </div>
     </div>
+
+    <!-- BOOKINGS SECTION -->
+    <div class="row mt-5 g-4">
+      <div class="col-12">
+        <div class="card shadow border-0" style="border-radius:16px">
+          <div class="card-body p-4 p-lg-5">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <div>
+                <p class="text-success small text-uppercase fw-semibold mb-1">View Records</p>
+                <h2 class="fw-bold mb-0">All Bookings</h2>
+              </div>
+              <button class="btn btn-success rounded-pill" onclick="loadAllBookings()">
+                <i class="bi bi-arrow-repeat me-2"></i>Refresh
+              </button>
+            </div>
+
+            <!-- Loading indicator -->
+            <div id="loadingMsg" class="alert alert-info d-flex align-items-center gap-2 mb-0">
+              <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+              Loading bookings...
+            </div>
+
+            <!-- Empty message -->
+            <div id="emptyMsg" class="alert alert-warning d-none mb-0">
+              <i class="bi bi-info-circle me-2"></i>No bookings found yet.
+            </div>
+
+            <!-- Bookings Table -->
+            <div id="bookingsContainer" class="d-none">
+              <div class="table-responsive">
+                <table class="table table-hover">
+                  <thead class="table-success">
+                    <tr>
+                      <th>ID</th>
+                      <th>Name</th>
+                      <th>Email</th>
+                      <th>Phone</th>
+                      <th>Check-in</th>
+                      <th>Check-out</th>
+                      <th>Guests</th>
+                      <th>Room Type</th>
+                      <th>Booked On</th>
+                    </tr>
+                  </thead>
+                  <tbody id="bookingsTable">
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
   <footer class="bg-dark text-light py-3 ">
     <ul class="nav justify-content-center border-bottom border-secondary pb-3 mb-3">
@@ -277,59 +334,160 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
+    // Define functions globally BEFORE document ready
+    function loadAllBookings() {
+      console.log("Loading all bookings...");
+      $.ajax({
+        type: "GET",
+        url: "backend/contact.php",
+        dataType: "json",
+        success: function (data) {
+          console.log("All Records fetched:", data);
+
+          $("#loadingMsg").addClass("d-none");
+
+          if (!data || data.length === 0) {
+            console.log("No data found");
+            $("#emptyMsg").removeClass("d-none");
+            $("#bookingsContainer").addClass("d-none");
+            return;
+          }
+
+          console.log("Displaying " + data.length + " records");
+          $("#emptyMsg").addClass("d-none");
+          $("#bookingsContainer").removeClass("d-none");
+
+          // Clear existing table rows
+          $("#bookingsTable").empty();
+
+          // Populate table with records
+          $.each(data, function (index, record) {
+            let row = `<tr onclick="fetchOneRecord(${record.id})" style="cursor:pointer;">
+            <td>${record.id}</td>
+            <td>${record.name}</td>
+            <td>${record.email}</td>
+            <td>${record.phone}</td>
+            <td>${record.checkin}</td>
+            <td>${record.checkout}</td>
+            <td>${record.guests}</td>
+            <td>${record.room}</td>
+            <td>${record.created_at}</td>
+          </tr>`;
+            $("#bookingsTable").append(row);
+          });
+        },
+        error: function (xhr, status, error) {
+          console.error("Error fetching records:", status, error);
+          console.error("Response:", xhr.responseText);
+          $("#loadingMsg").removeClass("d-none").html("<i class='bi bi-exclamation-circle me-2'></i>Error loading bookings: " + error);
+        }
+      });
+    }
+
+    // READ ONE RECORD - Fetch a specific booking by ID
+    function fetchOneRecord(id) {
+      console.log("Fetching record with ID:", id);
+      $.ajax({
+        type: "GET",
+        url: "backend/contact.php?id=" + id,
+        dataType: "json",
+        success: function (data) {
+          console.log("Single Record fetched:", data);
+
+          if (data.error) {
+            alert("Record not found: " + data.error);
+            return;
+          }
+
+          // Display record details in alert
+          let details = `
+Booking Details:
+━━━━━━━━━━━━━━
+ID: ${data.id}
+Name: ${data.name}
+Email: ${data.email}
+Phone: ${data.phone}
+Check-in: ${data.checkin}
+Check-out: ${data.checkout}
+Guests: ${data.guests}
+Room: ${data.room}
+Booked On: ${data.created_at}
+          `;
+          alert(details);
+        },
+        error: function (xhr, status, error) {
+          console.error("Error fetching record:", status, error);
+          console.error("Response:", xhr.responseText);
+          alert("Error fetching record details: " + error);
+        }
+      });
+    }
+
     $(document).ready(function () {
 
-      // HTML Event + Effect
-      $("#bookingForm").submit(function (e) {
-        e.preventDefault();
-        $("#successMsg").removeClass("d-none").fadeIn();
+      // Load all bookings on page load
+      console.log("Document ready - loading bookings");
+      loadAllBookings();
 
-        setTimeout(function () {
-          $("#bookingForm")[0].reset();
-          $("#successMsg").fadeOut();
-        }, 4000);
-      });
-
-      //DOM Modification(change heading text) 
-      $("form").submit(function () {
-        $("h2").first().html("Booking sent successfully! <br> Thank you for connecting with us.");
-
-        //CSS Manipulation(Color)
-        $("body").css("background-color", "#d1f7c4");
-
-        //DOM attribute manipulation
-        $("#bookingForm input, #bookingForm select, #bookingForm textarea")
-          .attr("disabled", true);
-
-        //DOM traversal
-        $("#bookingForm").find("input, select, textarea").addClass("border border-success");
-      });
-      //additional 
+      // SUBMIT FORM - Add new booking
       $("#bookingForm").submit(function (e) {
         e.preventDefault();
 
-        // Get all form values
-        let name = $("#bookingForm input[type=text]").val();
-        let email = $("#bookingForm input[type=email]").val();
-        let phone = $("#bookingForm input[type=tel]").val();
-        let checkin = $("#bookingForm input[type=date]").eq(0).val();
-        let checkout = $("#bookingForm input[type=date]").eq(1).val();
-        let guests = $("#bookingForm select").eq(0).val();
-        let room = $("#bookingForm select").eq(1).val();
-        let requests = $("#bookingForm textarea").val();
+        // Collect Data
+        let formData = {
+          name: $("#userName").val(),
+          email: $("#userEmail").val(),
+          phone: $("#userPhone").val(),
+          checkin: $("#checkIn").val(),
+          checkout: $("#checkOut").val(),
+          guests: $("#guests").val(),
+          room: $("#roomType").val()
+        };
 
-        // Show alert
-        alert(`Booking Details:\n
-       Name: ${name}
-       Email: ${email}
-       Phone: ${phone}
-       Check-in: ${checkin}
-       Check-out: ${checkout}
-       Guests: ${guests}
-       Room: ${room}
-       Special Requests: ${requests}`);
+        console.log("Submitting form data:", formData);
+
+        // SEND DATA TO PHP (using json_encode in backend)
+        $.ajax({
+          type: "POST",
+          url: "backend/contact.php",
+          data: formData,
+          dataType: "json",
+          success: function (response) {
+            console.log("Form submission response:", response);
+
+            if (response.error) {
+              alert("Error: " + response.error);
+              return;
+            }
+
+            // Success UI
+            $("#successMsg").removeClass("d-none").fadeIn();
+            setTimeout(function () {
+              $("#successMsg").fadeOut();
+            }, 4000);
+
+            // Reset form
+            $("#bookingForm")[0].reset();
+
+            // Re-enable form
+            $("#bookingForm input, #bookingForm select, #bookingForm textarea")
+              .attr("disabled", false);
+
+            // Refresh table with all records (using json_decode in backend)
+            setTimeout(function () {
+              loadAllBookings();
+            }, 500);
+          },
+          error: function (xhr, status, error) {
+            console.error("Form submission error:", status, error);
+            console.error("Response:", xhr.responseText);
+            alert("Error connecting to server: " + error);
+          }
+        });
       });
+
     });
   </script>
 </body>
