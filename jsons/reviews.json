@@ -60,13 +60,13 @@
         "date": "2026-04-06"
     },
     {
-        "name": "fjif",
-        "location": "fdf",
-        "rating": "4",
-        "comment": "fdfd",
-        "id": 1776712149,
+        "id": 1776748981,
+        "name": "Daniru Ayuka Wahalawatte",
         "role": "Visitor",
-        "date": "2026-04-20",
+        "rating": 5,
+        "comment": "Actually a pretty decent and nice place to spend the vacation in",
+        "location": "Kalubowila",
+        "date": "2026-04-21",
         "image": "https:\/\/randomuser.me\/api\/portraits\/men\/10.jpg"
     }
 ]
