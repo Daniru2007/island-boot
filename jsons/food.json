@@ -1,0 +1,110 @@
+[
+    {
+        "id": 1,
+        "title": "Bombata Rice",
+        "category": "Local Dishes",
+        "image": "assests\/Bombata Rice.jpg",
+        "price": "1200 LKR",
+        "availability": "Available",
+        "description": "Traditional local meal with yellow rice and garlic roti."
+    },
+    {
+        "id": 2,
+        "title": "Grilled Chicken",
+        "category": "Local Dishes",
+        "image": "assests\/Grilled Chicken.webp",
+        "price": "1800 LKR",
+        "availability": "Available",
+        "description": "Fresh grilled chicken served with BBQ sauce."
+    },
+    {
+        "id": 3,
+        "title": "Kimchick Pasta",
+        "category": "Local Dishes",
+        "image": "assests\/Kimchick Pasta.jpg",
+        "price": "1500 LKR",
+        "availability": "Unavailable",
+        "description": "Fusion pasta with chicken and kimchi."
+    },
+    {
+        "id": 4,
+        "title": "Taliano Lasagna",
+        "category": "Local Dishes",
+        "image": "assests\/Taliano Lasagna.jpg",
+        "price": "2000 LKR",
+        "availability": "Available",
+        "description": "Three-layer lasagna with chicken, beef, and pork."
+    },
+    {
+        "id": 5,
+        "title": "Fresh Fruit Juice",
+        "category": "Drinks",
+        "image": "assests\/Refresh Juice.webp",
+        "price": "600 LKR",
+        "availability": "Available",
+        "description": "Refreshing tropical fruit juice varieties."
+    },
+    {
+        "id": 6,
+        "title": "Mango Blast",
+        "category": "Drinks",
+        "image": "assests\/Mango Blast.jpg",
+        "price": "700 LKR",
+        "availability": "Available",
+        "description": "Natural mango drink with intense tropical flavor."
+    },
+    {
+        "id": 7,
+        "title": "Duriyan Juice",
+        "category": "Drinks",
+        "image": "assests\/Duriyan Juice.jpg",
+        "price": "900 LKR",
+        "availability": "Unavailable",
+        "description": "Unique drink made from durian fruit."
+    },
+    {
+        "id": 8,
+        "title": "Chill Lemon",
+        "category": "Drinks",
+        "image": "assests\/C'mon Lemon.webp",
+        "price": "500 LKR",
+        "availability": "Available",
+        "description": "Lemon juice with dragon fruit twist."
+    },
+    {
+        "id": 9,
+        "title": "Beach Dinner",
+        "category": "Dining",
+        "image": "assests\/Beach Dining.jpg",
+        "price": "5000 LKR",
+        "availability": "Available",
+        "description": "Romantic beachside sunset dining experience."
+    },
+    {
+        "id": 10,
+        "title": "Buffet Dining",
+        "category": "Dining",
+        "image": "assests\/buffet diining.jpg",
+        "price": "3500 LKR",
+        "availability": "Available",
+        "description": "All-you-can-eat buffet with local and international dishes."
+    },
+    {
+        "id": 11,
+        "title": "Family Dining",
+        "category": "Dining",
+        "image": "assests\/family dining.png",
+        "price": "4000 LKR",
+        "availability": "Available",
+        "description": "Comfortable dining space perfect for families."
+    },
+    {
+        "id": 12,
+        "title": "Float Dining",
+        "category": "Dining",
+        "image": "assests\/pool Dining.webp",
+        "price": "6000 LKR",
+        "availability": "Available",
+        "description": "Special floating dining experience in a private pool."
+    }
+]
