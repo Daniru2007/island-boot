@@ -1,0 +1,46 @@
+[
+    {
+        "id": 1,
+        "title": "Beautiful Beach",
+        "category": "beach",
+        "image": "assests\/jakob-owens-2uuT1mmxnz0-unsplash.jpg",
+        "location": "Mirissa",
+        "description": "A calm beach with golden sand",
+        "date": "2026-04-01"
+    },
+    {
+        "id": 2,
+        "title": "Sunset Beach",
+        "category": "beach",
+        "image": "assests\/jakob-owens-U7DePI_oKNY-unsplash.jpg",
+        "location": "Unawatuna",
+        "description": "Perfect place to watch sunsets",
+        "date": "2026-04-02"
+    },
+    {
+        "id": 3,
+        "title": "Luxury Villa",
+        "category": "villa",
+        "image": "assests\/michael-DXQB5D1njMY-unsplash.jpg",
+        "location": "Bentota",
+        "description": "Private villa with ocean view",
+        "date": "2026-04-03"
+    },
+    {
+        "id": 4,
+        "title": "Water Sports",
+        "category": "activity",
+        "image": "assests\/beautiful-girl-red-bikini-boat-koh-kai-island-thailand.jpg",
+        "location": "Hikkaduwa",
+        "description": "Exciting water adventures",
+        "date": "2026-04-04"
+    },
+    {
+        "id": 1776751353,
+        "title": "Cool Place",
+        "category": "beach",
+        "image": "https:\/\/encrypted-tbn0.gstatic.com\/images?q=tbn:ANd9GcQSatxvizfQunTOqkNzuh98m87-C7f-oX8_qw&s",
+        "location": "Merlanda",
+        "description": "exciting place",
+        "date": "2026-04-21"
+    }]

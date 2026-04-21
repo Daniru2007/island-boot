@@ -1,67 +1,52 @@
 <?php
+
 header("Content-Type: application/json");
 
-$file = "data.json";
+$file = "../jsons/gallery.json";
 
-// read json
-function readData($file) {
-    if (!file_exists($file)) {
-        return [];
-    }
-    $json = file_get_contents($file);
-    return json_decode($json, true) ?? [];
-}
+// GET ONE
+if (isset($_GET['id'])) {
 
-// write json
-function saveData($file, $data) {
-    file_put_contents($file, json_encode($data, JSON_PRETTY_PRINT));
-}
+    $id = $_GET['id'];
+    $data = json_decode(file_get_contents($file), true);
 
-// get request
-if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-
-    $data = readData($file);
-
-    // get 1 record
-    if (isset($_GET['id'])) {
-        $id = $_GET['id'];
-
-        foreach ($data as $record) {
-            if ($record['id'] == $id) {
-                echo json_encode($record);
-                exit;
-            }
+    foreach ($data as $item) {
+        if ($item['id'] == $id) {
+            echo json_encode($item);
+            exit;
         }
-
-        echo json_encode(["message" => "Record not found"]);
-        exit;
     }
 
-    // get all records
-    echo json_encode($data);
+    echo json_encode(["error" => "Not found"]);
     exit;
 }
 
-// post request
+// GET ALL
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+    echo file_get_contents($file);
+    exit;
+}
+
+// ADD NEW (POST)
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    $data = readData($file);
+    $data = json_decode(file_get_contents($file), true) ?? [];
 
-    // create new record
-    $newRecord = [
-        "id" => time(), // simple unique ID
-        "name" => $_POST['name'] ?? '',
-        "email" => $_POST['email'] ?? '',
-        "age" => $_POST['age'] ?? '',
-        "city" => $_POST['city'] ?? '',
-        "phone" => $_POST['phone'] ?? ''
+    $new = [
+        "id" => time(),
+        "title" => $_POST["title"],
+        "category" => $_POST["category"],
+        "image" => $_POST["image"],
+        "location" => $_POST["location"],
+        "description" => $_POST["description"],
+        "date" => date("Y-m-d")
     ];
 
-    $data[] = $newRecord;
+    $data[] = $new;
 
-    saveData($file, $data);
+    file_put_contents($file, json_encode($data, JSON_PRETTY_PRINT));
 
-    echo json_encode(["message" => "Record added successfully"]);
+    echo json_encode(["success" => true]);
     exit;
 }
 ?>
