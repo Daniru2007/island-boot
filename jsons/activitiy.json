@@ -1,11 +1,10 @@
 [
-   
     {
         "id": 1776480830,
-        "name": "Island hopping",
-        "description": "Explore nearby islands, interact with local villages and soak in\r\nunique culture.",
-        "type": "Cultural",
-        "price": "200",
+        "name": "Swimming",
+        "description": "a tranquil escape, featuring crystal-clear, warm, turquoise waters, powdery white sand beaches, and vibrant shallow coral reefs teeming with colorful fish",
+        "type": "Adventure",
+        "price": "5200",
         "discount": "10"
     }
 ]
