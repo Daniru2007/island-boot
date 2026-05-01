@@ -53,7 +53,7 @@ elseif ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $fileContent = file_get_contents($file);
         $data = json_decode($fileContent, true);
         
-        // If data is null (invalid JSON), start fresh
+        //if null
         if ($data === null) {
             $data = [];
         }

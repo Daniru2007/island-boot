@@ -106,5 +106,14 @@
         "price": "6000 LKR",
         "availability": "Available",
         "description": "Special floating dining experience in a private pool."
+    },
+    {
+        "id": 1777528944,
+        "title": "Rice",
+        "category": "local",
+        "image": "",
+        "price": "2500",
+        "availability": "available",
+        "description": ""
     }
 ]

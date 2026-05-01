@@ -68,5 +68,15 @@
         "location": "Kalubowila",
         "date": "2026-04-21",
         "image": "https:\/\/randomuser.me\/api\/portraits\/men\/10.jpg"
+    },
+    {
+        "id": 1777527688,
+        "name": "someone",
+        "role": "Visitor",
+        "rating": 5,
+        "comment": "Good place",
+        "location": "Sri Lanka",
+        "date": "2026-04-30",
+        "image": "https:\/\/randomuser.me\/api\/portraits\/men\/10.jpg"
     }
 ]
